@@ -1,0 +1,192 @@
+// _benefits.sass
+
+.trip-benefits
+  +content-plain-background
+  +cti-border-radius-top
+  +clearfix
+  position: relative
+  h3
+    float: left
+    width: 75%
+  &:after
+    content: ""
+    background: url("/Content/styles/i/cc_logos.png")
+    width: 165px
+    height: 31px
+    position: absolute
+    bottom: $blh / 2
+    left: $gutter
+
+.benefits-header
+  +clearfix
+  position: relative
+  margin-bottom: 0
+  .plans
+    background: $background-color-solid
+    +cti-border-radius-top-right
+    float: right
+    width: 25%
+    margin-bottom: 0
+    h4
+      +font-smoothing
+      +content-header-title
+      border-top-left-radius: 0px // HAX
+      background: $theme-color
+      color: $text-color-inverted
+      text-align: center
+      padding-left: 0
+  .buy-now
+    margin-bottom: 0
+    .input-group
+      width: 100%
+      margin-right: 0
+      margin-bottom: $blh / 2
+      .button-like
+        width: 80%
+  .price
+    +price-styles
+    margin-bottom: $blh / 2
+    span
+      display: none
+  h3
+    position: relative
+    text-transform: uppercase
+    font-weight: 300
+    text-indent: $gutter
+    margin-top: $gutter / 2
+  .policy-wording
+    line-height: $font-size-normal
+    position: absolute
+    top: 0
+    right: $gutter
+  .underwriter-logo
+    text-indent: -999em
+    position: absolute
+    left: $gutter
+    top: 50px
+    &:after
+      content: ""
+      width: 82px
+      height: 43px
+      background: transparent url("/Content/styles/i/underwriter_logo.png") no-repeat left top
+      display: block
+  .expand-all
+    +hover-pointer
+    position: absolute
+    bottom: 0
+    left: $gutter
+    font-size: $font-size-vsmall
+    font-weight: 800
+    color: $theme-color
+    text-transform: uppercase
+.benefits-list
+  margin-bottom: 0
+  .benefit-header
+    +hover-pointer
+    width: 100%
+    dl
+      margin-bottom: 0
+  .title
+    width: 75%
+    position: relative
+    line-height: $blh * 1.5
+    span
+      display: block
+      padding-left: 58px
+  .values
+    +content-plain-background
+    width: 25%
+    clear: none
+    line-height: $blh * 1.5
+    li
+      +font-smoothing
+      font-weight: normal
+      text-align: center
+  .description
+    > span
+      display: block
+      padding: $blh / 2 $gutter $blh / 2 58px
+  .top-benefit
+    border-top: 1px solid $border-color
+    margin-bottom: 0
+    &:last-child
+      border-bottom: 1px solid $border-color
+  .sub-benefit
+    margin-bottom: 0
+  .expandable
+    position: absolute
+    left: $gutter
+    top: 5px
+    @extend .button-primary
+    line-height: 24px
+    padding: 0px 8px
+    text-indent: 0
+    &:after
+      content: ""
+
+.benefits-header.after
+  .footnotes
+    float: left
+    width: 75%
+  h4
+    border-top-right-radius: 0
+  p
+    font-style: italic
+    box-sizing: border-box
+    margin: 0 $gutter
+    font-size: $font-size-vsmall
+    line-height: $font-size-vsmall + 4px
+    &:first-child
+      margin-top: $blh / 4
+  p span
+    display: none
+
+.benefits-footer
+  margin-bottom: 0
+
+@media all and (max-width: $mq-mobile-landscape)
+  $lhs: 65%
+  $rhs: 35%
+  .benefits-header
+    .plans  
+      width: $rhs
+      h4
+        margin-bottom: 0
+    h3
+      width: $lhs - 10%
+      text-indent: 0
+      padding-left: $gutter
+    .price
+      font-size: $font-size-xlarge
+      margin-bottom: 0
+    .policy-wording
+      position: static
+      font-size: $font-size-small
+      line-height: $font-size-small + 4px
+      float: none
+    .underwriter-logo
+      top: $blh * 1.5
+      // Hide it for now...?
+      display: none
+    .buy-button-primary a
+      padding-right: 4px
+      padding-left: 4px
+      &:after
+        display: none
+  .benefits-list
+    .benefit-header > dl
+      position: relative
+    .title
+      box-sizing: border-box
+      width: $lhs
+      padding: 8px 8px 8px 0
+      line-height: $font-size-xlarge
+    .values
+      width: $rhs
+      position: absolute
+      top: 0
+      right: 0
+      height: 100%
+  .benefits-header.after
+    .footnotes
+      width: $lhs

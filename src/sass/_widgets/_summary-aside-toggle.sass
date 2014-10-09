@@ -1,0 +1,35 @@
+// _summary-aside-toggle.sass
+
+.summary-aside-mobile-toggle
+  display:  none
+  position: relative
+  +font-smoothing
+  font-family: $font-theme
+  text-transform: uppercase
+  color: $link-color
+  margin: 0 $gutter $blh / 2
+  padding-left: 34px
+  font-size: $font-size-small
+  line-height: 26px
+  +hover-pointer
+  &:before
+    border-radius: 2px
+    content: "\57"
+    position: absolute
+    top: 0
+    left: 0
+    padding: 4px
+    font-family: $font-icon
+    font-size: 18px
+    line-height: 18px
+    color: $text-color-inverted
+    background: $theme-color
+  &.toggled:before
+    content: "\59"
+
+    
+@media all and (max-width: $mq-mobile-landscape)
+  .summary-aside-mobile-toggle
+    display: block
+  .summary-aside
+    display: none

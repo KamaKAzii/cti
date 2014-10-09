@@ -1,0 +1,69 @@
+<div class="control-panel--dev standard-container">
+  <h3>Dev Control Panel</h3>
+  <div class="input-group half-width">
+    <button class="button-primary toggle-validation">Toggle Validation State</button>
+  </div>
+  <div class="input-group half-width">
+    <button class="button-primary toggle-modal">Toggle Modal State</button>
+  </div>
+</div>
+
+<script>
+
+  $(function () {
+    var
+      toggleValidationState,
+      addValidationToInput,
+      createValidationUl,
+      toggleModalState;
+
+    $(".control-panel--dev .toggle-validation").on("click", function(e) {
+      toggleValidationState();
+      e.preventDefault();
+    });
+
+    $(".control-panel--dev .toggle-modal").on("click", function(e) {
+      toggleModalState();
+      e.preventDefault();
+    });
+
+    toggleValidationState = function() {
+      // QQC - Ages
+      var $qqcAgesInputGroup = $(".qqc-field.ages .input-group");
+      addValidationDirectlyToInput($qqcAgesInputGroup);
+
+      // QQC - Destinations
+      var $qqcWhereInputGroup = $(".qqc-field.where .input-group");
+      addValidationDirectlyToInput($qqcWhereInputGroup);
+    };
+
+    // Helper functions.
+    createValidationUl = function(items) {
+      var $validationUl = $("<ul>").addClass("input-validation-errors");
+      $.each(items, function(i, v) {
+        $validationUl.append($("<li>" + v + "</li>"));
+      });
+      return $validationUl;
+    };
+
+    addValidationDirectlyToInput = function($input) {
+      if ($input.hasClass("error")) {
+        $input.siblings(".input-validation-errors").remove();
+      } else {
+        var $validationUl = createValidationUl(
+        [
+          "This is an error.",
+          "Errors can be long and annoying like this too."
+        ]);
+        $input.after($validationUl);
+      }
+      $input.toggleClass("error");
+    };
+
+    toggleModalState = function() {
+      var $modalComponents = $(".modal-content, .modal-whitewash");
+      $modalComponents.toggle();
+    };
+  });
+
+</script>

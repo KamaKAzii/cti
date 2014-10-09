@@ -1,0 +1,59 @@
+// _methods/_components.sass
+
+=standard-container
+  +content-plain-background
+  +cti-border-radius
+  +clearfix
+  h3, h4
+    +content-header-title
+
+=standard-container-without-header-styles
+  +content-plain-background
+  +cti-border-radius
+  +clearfix
+
+=highlight-container
+  +standard-container
+  border: 2px solid $theme-color
+  box-sizing: border-box
+
+=callout-container($icon-content: "\4d")
+  border-radius: 10px
+  border: 2px solid $highlight-color
+  padding: $blh
+  > *:last-child
+    margin-bottom: 0
+  h2, h3, h4, h5
+    +font-smoothing
+    +icon-styles($icon-content)
+    padding-bottom: $blh / 2
+    margin-bottom: $blh / 2
+    border-bottom: 1px solid $border-color-medium
+    font-size: $font-size-normal
+    font-family: $font-theme
+    color: $highlight-color
+    text-transform: uppercase
+
+=layout-box
+  +clearfix
+  margin: 0 auto
+  width: 95%
+  max-width: 880px
+  @media all and (max-width: $mq-tablet)
+    width: auto
+    max-width: initial
+    margin: 0 $gutter / 2
+  @media all and (max-width: $mq-mobile-landscape)
+    margin: 0
+
+// For extending and direct use.
+.standard-container
+  +standard-container
+  padding-left: $gutter
+  @media all and (max-width: $mq-mobile-landscape)
+    > *
+      box-sizing: border-box
+      padding-right: $gutter
+  > h2, > h3, > h4
+    +content-header-title
+    margin-left: -$gutter

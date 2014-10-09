@@ -1,0 +1,25 @@
+// _datepicker.sass
+
+.datepicker
+  +standard-container
+  +callout-arrow(8px, "left", $background-color-solid, 20px, -8px)
+  +clearfix
+  background-color: $background-color-solid
+  margin: 4px $gutter 0 0
+  // TODO: Remove this from Common.
+  .datepicker-calendar:nth-last-child(1) 
+    display: inline
+  .close, h3
+    display: none
+  .datepicker-show-next-month, .datepicker-show-past-month
+    top: $blh / 2
+  .datepicker-calendar td a
+    background: $theme-color-light
+    font-weight: 300
+  .datepicker-calendar td.selected a
+    background: $theme-color
+    color: $text-color-inverted
+  .datepicker-calendar-title, th
+    font-family: $font-theme
+    font-weight: normal
+    text-transform: uppercase

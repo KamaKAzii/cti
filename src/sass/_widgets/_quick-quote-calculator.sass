@@ -1,0 +1,95 @@
+// _quick-quote-calculator.sass
+
+#quote-session-tokens
+  margin-bottom: 0
+.qqc
+  +standard-container
+  +clearfix
+  width: 100%
+  max-width: 700px
+  margin: 0 auto $blh
+  .input-group
+    +clearfix
+    float: none
+    width: auto
+    display: block
+    margin: 0 $gutter $blh
+    .input-with-icon span
+      display: none
+  .qqc-field
+    float: left
+    width: 33%
+    &.ages
+      width: 34%
+      h5
+        border-right: none
+      input[type='text']
+        clear: none
+        width: 40%
+        margin-right: $gutter
+    &.when
+      margin-bottom: 0
+      .departure-date
+        margin-top: -16px
+      .input-group .input-with-icon
+        margin-bottom: 0
+  .where h5
+    +cti-border-radius-top-left
+    +icon-styles("\23")
+  .when h5
+    +icon-styles("\46")
+  .ages h5
+    +cti-border-radius-top-right
+    +icon-styles("\50")
+  .qqc-field h5
+    +font-smoothing
+    background: $background-color-solid
+    padding: 10px 36px 10px 54px
+    min-height: $blh * 1.5
+    font-size: $font-size-small
+    line-height: $font-size-small + 4px
+    text-transform: uppercase
+    border-right: 1px solid $calculator-border-color
+    border-bottom: 1px solid $calculator-border-color
+    &:after
+      color: $theme-color
+      top: 18px
+      left: 18px
+  .actions .input-group
+    float: right
+    width: 30%
+    margin-bottom: 0
+    button
+      float: right
+      span
+        display: none
+  .input-validation-errors
+    margin: 0 $gutter $blh
+  @media all and (max-width: $mq-mobile-landscape)
+    max-width: 290px
+    // Need to beat above selector for .ages
+    .qqc-field,
+    .qqc-field.ages
+      width: 100%
+      margin-bottom: 0
+      h5
+        min-height: initial
+        margin-bottom: $blh / 2
+        border: none
+      h5:after
+        top: 10px
+      &.when .departure-date
+        margin-top: 0
+      &.where h5
+        +cti-border-radius-top-right
+    .qqc-field.ages input[type='text']
+      width: 45%
+      &:last-child
+        float: right
+        margin-right: 0
+    .actions
+      .input-group
+        float: none
+        width: auto
+      button
+        width: 100%

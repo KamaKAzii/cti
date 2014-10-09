@@ -1,0 +1,73 @@
+// _trip-summary-and-quote-summary.sass
+
+.trip-summary,
+.quote-summary
+  +standard-container
+  position: relative
+  .trip-summary-content, .quote-summary-content
+    +clearfix
+    margin-bottom: 0
+  .edit
+    +link-like
+    position: absolute
+    top: 6px
+    right: 5px
+  dl
+    float: left
+    margin-right: $gutter
+  .destinations
+    width: 31%
+    margin-left: $gutter
+  .departure-date, .return-date
+    width: 19%
+  .ages
+    float: right
+    width: 12%
+  @media all and (max-width: $mq-mobile-landscape)
+    .destinations
+      width: 90%
+    .departure-date
+      clear: left
+      margin-left: $gutter
+    .departure-date, .return-date, .ages
+      width: 32%
+    .ages
+      width: 14%
+
+.summary-aside
+  +clearfix
+  margin-bottom: 0
+  .trip-summary
+    float: left
+    width: 73%
+  .quote-summary
+    float: right
+    width: 25%
+  @media all and (max-width: $mq-mobile-landscape)
+    .trip-summary, .quote-summary
+      width: 100%
+
+.quote-summary
+  position: relative
+  h4
+    background: $theme-color
+    color: $text-color-inverted
+  dl
+    display: none
+  .total-price
+    width: 100%
+    display: block
+    margin-right: 0
+    margin-bottom: $blh / 4
+    dt
+      display: none
+    dd
+      +price-styles
+  .plan-name
+    display: block
+    margin-left: $gutter
+    margin-bottom: $blh / 2
+    dt, dd
+      font-size: $font-size-small
+      line-height: $font-size-small
+      margin-bottom: 0

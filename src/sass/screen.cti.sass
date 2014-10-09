@@ -1,0 +1,59 @@
+@import compass/reset
+@import compass/utilities/general
+@import compass/typography/text/replacement
+@import compass/typography/lists
+@import compass/css3
+
+// ***
+// Import "common" variables THEN let them
+// be superseeded by the brand's "base" variables.
+// ***
+@import ../Common/sass/core/variables
+@import _base/variables
+
+// ***
+// Import the parts of the WNG common library necessary
+// as CTI is a very cut back version.
+// ***
+@import ../Common/sass/fontawesome/variables
+@import ../Common/sass/fontawesome/icons
+$fa-font-path: "/Content/styles/fonts"
+@import ../Common/sass/fontawesome/path
+@import ../Common/sass/core/layout
+@import ../Common/sass/core/grid
+@import ../Common/sass/core/elements
+@import ../Common/sass/core/forms
+@import ../Common/sass/core/modals
+@import ../Common/sass/widgets/autocompleter
+@import ../Common/sass/widgets/datepicker
+
+// ***
+// From here on is solution specific.
+// ***
+@import _base/_methods/utilities
+@import _base/_methods/styles
+@import _base/_methods/components
+
+@import _base/fonts
+@import _base/variables
+@import _base/layout
+@import _base/header
+@import _base/elements
+@import _base/buttons
+@import _base/forms
+@import _base/footer
+@import _base/modals
+
+@import _widgets/breadcrumb
+@import _widgets/summary-aside-toggle
+@import _widgets/trip-summary-and-quote-summary
+@import _widgets/benefits
+@import _widgets/quick-quote-calculator
+@import _widgets/payment-panel
+@import _widgets/autocompleter
+@import _widgets/datepicker
+
+@import _pages/details
+
+// For Dev
+@import _widgets/control-panel

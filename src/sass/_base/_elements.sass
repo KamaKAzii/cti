@@ -1,0 +1,55 @@
+// _elements.sass
+
+body
+  font-family: $font-normal
+  font-size: $font-size-normal
+  line-height: $font-size-normal + 6px
+  font-weight: 300
+
+*
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font-theme
+
+a
+  color: $link-color
+
+// Extra selectors for funky markup.
+h1,
+.content > h2
+  font-size: $font-size-page-header
+  line-height: $font-size-page-header + 4px
+  color: $theme-color
+  font-weight: 300
+  text-shadow: 0px -1px 0px rgba(255, 255, 255, 0.8)
+  text-transform: uppercase
+  text-align: center
+  span
+    color: $text-color-inverted
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5)
+
+dl
+  +clearfix
+  dt
+    float: left
+    font-weight: bold
+  dd
+    clear: left
+    float: left
+
+// Funkiness to account for markup.
+.clear
+  margin-bottom: 0
+
+// Funkiness to account for markup.
+.panel
+  +standard-container-without-header-styles
+
+// Funkiness to account for markup.
+.input-container
+  +standard-container-without-header-styles
+  padding: $blh $gutter 0
+  box-sizing: border-box
+  > h3
+    +input-container-h3-hax

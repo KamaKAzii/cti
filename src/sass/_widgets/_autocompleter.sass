@@ -1,0 +1,104 @@
+// _autocompleter.sass
+
+.uber-menu
+  +standard-container
+  +callout-arrow(8px, "left", $background-color-solid, 20px, -8px)
+  +clearfix
+  margin: 4px $gutter 0 0
+  background-color: $background-color-solid
+  border: 1px solid $border-color-medium
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.08)
+  h2, .close, > span
+    display: none
+  .uber-menu-footer
+    +highlight-container
+    margin: 0 $gutter $gutter
+    padding: $blh / 4 $gutter
+    color: $theme-color
+    font-family: $font-theme
+    font-size: $font-size-small
+    text-transform: uppercase
+  // TODO: Move this to the markup.
+  &:before
+    content: "Type countries or select form the list below"
+    position: absolute
+    left: $gutter
+    top: $gutter
+    font-family: $font-theme
+    font-size: $font-size-normal
+    text-transform: uppercase
+    border-bottom: 1px solid $border-color-medium
+    padding-bottom: $blh / 2
+    color: $theme-color
+  .groups
+    +clearfix
+    margin: $blh * 2.5 $gutter / 2 $gutter / 2
+  .group
+    float: left
+    margin-right: $gutter
+    border-left: 1px solid $border-color-medium
+    padding-left: $gutter
+    &:first-child
+      border-left: none
+      padding-left: $gutter / 2
+    &:last-child
+      margin-right: 0
+    ul li
+      +tag-hover-style
+  h3
+    text-transform: uppercase
+    font-size: $font-size-normal
+    color: $theme-color
+    margin-bottom: $blh / 2
+  @media all and (max-width: $mq-mobile-landscape)
+    padding: $gutter / 2
+    &:before
+      position: static
+      content: "Type a country name"
+      border-bottom: 0
+    .groups, .uber-menu-footer
+      display: none
+
+.autocomplete
+  +standard-container
+  +callout-arrow(8px, "left", $background-color-solid, 20px, -8px)
+  margin: 4px $gutter 0 0
+  li  
+    line-height: $font-size-xhuge
+    border-bottom: 1px solid $border-color-medium
+    background: $background-color-solid
+    &:first-child
+      +cti-border-radius-top
+    &:last-child
+      +cti-border-radius-bottom
+    @media all and (max-width: $mq-mobile-landscape)
+      line-height: 50px
+  li.selected
+    background: $theme-color-light
+
+#selected-destinations
+  +clearfix
+  li
+    +font-smoothing
+    font-family: $font-theme
+    text-transform: uppercase
+    font-size: $font-size-small
+    line-height: $font-size-large
+    margin-bottom: $blh / 4
+    a
+      color: $theme-color
+      font-family: $font-normal
+      margin-left: $gutter / 4
+    a:hover
+      +cti-border-radius
+      background: $theme-color
+      color: $text-color-inverted
+    @media all and (max-width: $mq-mobile-landscape)
+      line-height: 30px
+      margin-bottom: $blh / 4
+      a
+        +cti-border-radius
+        background: $theme-color
+        color: $text-color-inverted
+        padding: 0 $gutter / 2
+        line-height: 30px

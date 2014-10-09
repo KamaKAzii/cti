@@ -1,0 +1,54 @@
+// _forms.sass
+
+form
+  +clearfix
+
+.input-group
+  min-height: 64px
+  margin-bottom: $blh / 2
+  label
+    display: block
+    font-size: $font-size-small
+    line-height: $font-size-small + 2px
+    margin-bottom: $blh / 8
+    font-family: $font-theme
+    text-transform: uppercase
+  button, input
+    width: 100%
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='number']
+  border: 1px solid $form-border-color
+  background: $background-color-solid
+  box-shadow: 0px 2px 5px 3px $form-shadow inset
+  line-height: 30px
+  font-size: $font-size-normal
+  color: $text-color
+  &:focus
+    border-color: $form-border-color-active
+
+// TODO: Why is this necessary to beat Common?
+input.placeholder
+  color: $form-placeholder-color !important
+::-webkit-input-placeholder
+  color: $form-placeholder-color !important
+::-moz-placeholder
+  color: $form-placeholder-color !important
+
+.input-validation-errors
+  position: relative
+  +icon-styles("\f9")
+  margin-left: 0
+  padding-left: 30px
+  &:after
+    +font-smoothing
+    font-size: $font-size-normal
+    background: $error-color
+    color: $text-color-inverted
+    padding: 0px 5px
+    border-radius: 10px
+  li
+    list-style-type: none
+    margin-bottom: $blh / 2

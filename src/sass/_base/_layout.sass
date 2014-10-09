@@ -1,0 +1,35 @@
+// _layout.sass
+
+.content-wrapper
+  background: url('/Content/styles/i/hero_background_1.jpg')
+  background-size: cover
+  background-position: center top
+  min-height: 600px
+  margin-bottom: 0
+  padding-bottom: $blh
+
+.content-wrapper .content
+  +layout-box
+  padding-top: $header-height + $blh
+
+@media all and (max-width: $mq-mobile-landscape)
+  h1, .content > h2
+    display: none
+
+.mobile-landscape-visibility-check,
+.tablet-visibility-check,
+.thin-desktop-visibility-check
+  display: none
+  margin-bottom: 0
+  height: 0
+  max-height: 0
+
+@media all and (max-width: $mq-thin-desktop)
+  .thin-desktop-visibility-check
+    display: block
+@media all and (max-width: $mq-tablet)
+  .tablet-visibility-check
+    display: block
+@media all and (max-width: $mq-mobile-landscape)
+  .mobile-landscape-visibility-check
+    display: block

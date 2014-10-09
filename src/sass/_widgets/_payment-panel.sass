@@ -1,0 +1,103 @@
+// _paymnet-panel.sass
+
+// TODO: Clean the markup; super sloppy... lame.
+.payment-details
+  +highlight-container
+  +clearfix
+  max-width: 600px
+  width: 95%
+  margin: 0 auto $blh
+  .thawte, 
+  .card-types label, 
+  .card-types span, 
+  .help,
+  .cc-name .set-name, 
+  .cc-verification .link-like,
+  .cc-verification .alternative,
+  .cc-verification .other,
+  .cc-verification .amex
+    display: none
+  .display-container-content,
+  .credit-card-editor-wrapper
+    margin-bottom: 0
+  h3
+    +cti-border-radius-top
+    +font-smoothing
+    +icon-styles("\5f")
+    position: relative
+    background: $background-color-solid
+    text-transform: uppercase
+    font-size: $font-size-normal
+    padding: $blh / 2 0 $blh / 2 60px
+    color: $theme-color
+    &:after
+      font-size: $font-size-xhuge
+      top: $blh
+      left: $gutter
+    span
+      float: none
+      display: block
+      text-transform: initial
+      font-size: $font-size-small
+      line-height: $font-size-small + 4px
+      letter-spacing: -0.2px // Just to be safe on mobile.
+  fieldset
+    position: relative
+    margin: 0 $gutter
+  $card-types-width: 165px
+  $card-types-height: 31px
+  .card-types
+    position: absolute
+    top: 0
+    right: 0
+    &:after
+      content: ""
+      background: url("/Content/styles/i/cc_logos.png")
+      width: $card-types-width
+      height: $card-types-height
+      display: block
+  .cc-name, .cc-number, .cc-expiry
+    @extend .half-width
+    clear: left
+  $cvc-width: 139px
+  $cvc-height: 43px
+  .cc-verification
+    position: relative
+    clear: left
+    padding-right: $cvc-width + $gutter
+    label:after
+      content: " (CVC/CCV)"
+    .hint
+      position: absolute
+      bottom: 3px
+      right: 0
+      margin-bottom: 0
+      &:after
+        content: ""
+        width: $cvc-width
+        height: $cvc-height
+        background: url("/Content/styles/i/cc_cvc.png")
+        display: block
+  .buy-now
+    float: right
+    margin: 0 $gutter $blh 0
+    span
+      display: none
+  @media all and (max-width: $mq-mobile-landscape)
+    .card-types
+      top: -16px
+      &:after
+        width: $card-types-width / 1.5
+        height: $card-types-height / 1.5
+        background-size: 100% 100%
+        transform: rotate(0.0001deg)
+    .cc-verification 
+      padding-right: 0
+      min-width: 190px
+      .hint
+        bottom: 8px
+        right: 8px
+        &:after
+          width: $cvc-width / 1.5
+          height: $cvc-height / 1.5
+          background-size: 100% 100%

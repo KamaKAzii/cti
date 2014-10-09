@@ -1,0 +1,72 @@
+// _header.sass
+
+// Desktop
+.header
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: $header-height
+  font-family: $font-theme
+  font-weight: 300
+  color: $theme-color
+  text-transform: uppercase
+  border-bottom: $border-color-light
+  +content-plain-background()
+  .logo
+    position: absolute
+    top: 15px
+    left: $gutter
+    background: transparent url('/Content/styles/i/logo.png') no-repeat left top
+    @media only screen and (-webkit-min-device-pixel-ratio: 2)
+      background: transparent url('/Content/styles/i/logo@2x.png') no-repeat left top
+      background-size: 100% 100%
+    width: 146px
+    height: 47px
+  ul
+    float: right
+    margin-top: 22px
+    margin-right: $gutter
+    +pie-clearfix
+  li
+    float: left
+    margin-right: 50px
+    @media all and (max-width: $mq-thin-desktop)
+      margin-right: 25px
+    &:last-child
+      margin-right: 0
+
+  // Tablet and below
+  @media all and (max-width: $mq-tablet)
+    .mobile-toggle
+      position: absolute
+      top: 24px
+      right: 20px
+      z-index: 1000
+      &:after
+        content: "\51"
+        font-family: $font-icon
+        font-size: $nav-icon-size
+    ul
+      display: none
+      +content-plain-background()
+      +callout-arrow
+      position: absolute
+      top: 36px
+      right: 0
+      padding: $blh / 2 $gutter
+      width: $nav-mobile-width
+      border-radius: 5px
+      margin-right: $handheld-screen-gutter
+      box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.08)
+      margin-top: 48px
+      z-index: 1001
+    li
+      clear: right
+      display: block
+      width: 100%
+      margin-right: 0
+      border-bottom: 1px solid $border-color-light
+      line-height: $font-size-large + 16px
+      text-align: right
+      font-size: $font-size-large

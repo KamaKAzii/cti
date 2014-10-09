@@ -1,0 +1,44 @@
+// _modals.sass
+
+// Extend the Common classes to apply it to our markup.
+.modal-whitewash
+  @extend .modal-backdrop
+  +whitewash-background
+.modal-content
+  @extend .modal
+  +standard-container
+  +standard-box-shadow
+  background: $background-color-solid
+  padding: $blh / 2 $gutter 0
+  margin-bottom: 0
+  border: none
+  .close
+    position: absolute
+    top: 0
+    right: 0
+    line-height: 17px
+    padding-right: 16px
+    border-bottom-left-radius: 0px
+    border-bottom-right-radius: 0px
+    border-top-left-radius: 0px
+    border-top-right-radius: 5px
+    &:after
+      content: "x"
+      text-transform: none
+      font-family: $font-theme
+      position: static
+      padding: 0px 2px
+    span
+      display: none
+  h2
+    +content-header-title
+    color: $text-color-inverted
+    background: $theme-color
+    border-bottom: none
+    // Funkiness to account for markup.
+    // Need to split margin out so compiler understands.
+    padding: 5px 0 5px $gutter * 2
+    margin-top: -$blh / 2
+    margin-bottom: $blh
+    margin-left: -$gutter
+    width: 100%

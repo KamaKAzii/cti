@@ -1,0 +1,99 @@
+// _methods/_styles.sass
+
+=link-like
+  background: none
+  outline: none
+  border: none
+  font-family: $font-theme
+  color: $link-color
+  text-transform: uppercase
+  text-decoration: none
+  &:hover
+    cursor: pointer
+
+=icon-styles($icon-content: "\4d")
+  position: relative
+  padding-left: 36px
+  &:after
+    content: $icon-content
+    font-size: $font-size-xlarge
+    font-family: $font-icon
+    position: absolute
+    left: 0
+    top: 0
+
+=standard-box-shadow
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.08)
+    
+=cti-border-radius
+  border-radius: 5px
+
+=cti-border-radius-top
+  border-top-left-radius: 5px
+  border-top-right-radius: 5px
+
+=cti-border-radius-bottom
+  border-bottom-left-radius: 5px
+  border-bottom-right-radius: 5px
+
+=cti-border-radius-top-right
+  border-top-right-radius: 5px
+
+=cti-border-radius-top-left
+  border-top-left-radius: 5px
+
+=content-plain-background()
+  background: $background-color-fallback
+  background: $background-color
+
+=whitewash-background()
+  background: #4a4a4a
+  background: rgba(0, 0, 0, 0.75)
+
+=price-styles
+  +font-smoothing
+  font-family: $font-theme
+  font-size: $font-size-price
+  line-height: $font-size-price + 4px
+  color: $theme-color
+  text-align: center
+  width: 100%
+  &::first-letter
+    font-size: $font-size-price-symbol
+    line-height: $font-size-price-symbol
+    vertical-align: super
+
+=content-header-title
+  +font-smoothing
+  +cti-border-radius-top
+  background: $background-color-solid
+  line-height: $content-header-line-height 
+  padding-left: $gutter
+  margin-bottom: $blh / 2
+  font-size: 14px
+  text-transform: uppercase
+
+=tag-hover-style($padding: 5px)
+  +hover-pointer
+  color: $theme-color
+  padding: 0 $padding
+  position: relative
+  left: -$padding
+  line-height: $font-size-xlarge
+  +cti-border-radius
+  &:hover
+    background: $theme-color
+    color: $text-color-inverted
+
+=callout-arrow($size: 8px, $side: "right", $color: $background-color, $h-offset: 18px, $v-offset: -7px)
+  position: relative
+  &:after
+    content: ""
+    position: absolute
+    top: $v-offset
+    #{$side}: $h-offset
+    width: 0
+    height: 0
+    border-left: $size solid transparent
+    border-right: $size solid transparent
+    border-bottom: $size solid $color

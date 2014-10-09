@@ -1,0 +1,124 @@
+// _breadcrumb.sass
+
+// Override code
+.content
+  .breadcrumb
+    +clearfix
+    display: block
+    overflow: visible
+    max-height: initial
+  > .nav li
+    float: left
+    width: auto
+
+
+
+// Assume the elements we don't need aren't in the markup.
+// .step1, .step3, .step5 are the ones we're working with.
+
+.nav.breadcrumb
+  margin-bottom: $blh * 2
+
+// Dots
+.breadcrumb ol
+  +clearfix
+  width: 278px
+  margin: $blh / 2 auto 0
+  font-family: $font-theme
+.breadcrumb .step1,
+.breadcrumb .step3,
+.breadcrumb .step5,
+  position: relative
+  float: left
+  div
+    width: 40px
+    height: 40px
+    margin-bottom: 0
+    margin-right: 70px
+    border: 3px solid $breadcrumb-border-color
+    border-radius: 40px
+    &:after
+      color: $text-color-inverted
+  &:after
+    position: absolute
+    top: 0
+    left: 16px
+    line-height: 46px
+    font-size: $breadcrumb-font-size
+    font-weight: 300
+    color: $text-color-inverted
+    +font-smoothing
+  &.active
+    div
+      background: $breadcrumb-background-active
+      border-color: $breadcrumb-border-color-active
+      &:before
+        content: ""
+        position: absolute
+        left: 16px
+        top: -12px
+        width: 0
+        height: 0
+        border-top: 8px solid $breadcrumb-border-color
+        border-left: 7px solid transparent
+        border-right: 7px solid transparent
+      &:after
+        color: $breadcrumb-font-color-active
+    &:after
+      color: $breadcrumb-font-color-active
+  &.complete
+    &:after
+      content: "\d9"
+      font-family: $font-icon
+      left: 11px
+    div
+      background: $breadcrumb-background-complete
+      &:after
+        color: $breadcrumb-font-color-complete
+
+// Numbers and words
+.breadcrumb .step1
+  &:after
+    content: "1"
+  div:after
+    content: "Cover"
+    text-transform: uppercase
+    position: absolute
+    left: -3px
+    bottom: -26px
+    +font-smoothing
+.breadcrumb .step3
+  &:after
+    content: "2"
+  div:after
+    content: "Details"
+    text-transform: uppercase
+    position: absolute
+    left: -6px
+    bottom: -26px
+    +font-smoothing
+.breadcrumb .step5
+  &:after
+    content: "3"
+  div:after
+    content: "Payment"
+    text-transform: uppercase
+    position: absolute
+    left: -11px
+    bottom: -26px
+    +font-smoothing
+  div
+    margin-right: 0
+
+// Bars 
+.breadcrumb .step1,
+.breadcrumb .step3
+  &:before
+    content: ""
+    position: absolute
+    left: 50px
+    top: 21px
+    width: 59px
+    height: 2px
+    background: $breadcrumb-border-color
+    border-radius: 5px

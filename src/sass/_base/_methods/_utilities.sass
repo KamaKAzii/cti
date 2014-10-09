@@ -1,0 +1,34 @@
+// _methods/_utilities.sass
+
+=clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+=font-smoothing
+  -webkit-font-smoothing: antialiased
+
+=hover-pointer
+  &:hover
+    cursor: pointer
+
+=input-container-h3-hax
+  +content-header-title
+  margin-top: -$blh
+  margin-bottom: $gutter
+  margin-left: -$gutter
+  padding: 0 $gutter
+  width: 100%
+
+=input-group-half-width
+  width: 50%
+  float: left
+  @media all and (max-width: $mq-mobile-landscape)
+    width: 100%
+
+=input-group-third-width
+  width: 30%
+  float: left
+  @media all and (max-width: $mq-mobile-landscape)
+    width: 100%

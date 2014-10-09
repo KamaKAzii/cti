@@ -1,0 +1,81 @@
+<div class="display-container payment-details" id="payment-details">
+  <div class="display-container-content">
+    <img src="" class="thawte">
+
+    <div class="credit-card-editor-wrapper">
+
+      <h3 class="info">Secure Payment <span class="encryption">This is a 128-Bit SSL encrypted payment</span></h3>
+      <fieldset>
+        <div class="card-types">
+          <label>We Accept</label>
+          <span><img src="" alt="Visa"></span>
+          <span><img src="" alt="MasterCard"></span>
+          <span><img src="" alt="American Express"></span>
+        </div>
+
+        <div class="input-group cc-name">
+          <label for="PaymentDto_NameOnCreditCard">Name on card:</label>            <span class="help">The name on the front of your card</span>
+          <input class="name" id="PaymentDto_NameOnCreditCard" name="PaymentDto.NameOnCreditCard" tabindex="4" type="text" value="">            <input class="link-like set-name" type="submit" name="SetDefaultNameOnCard" tabindex="11" value="< Click to insert name of first traveller">
+        </div>
+        <div class="input-group cc-number">
+          <label for="PaymentDto_CreditCardNumber">Credit Card Number:</label>            <span class="help">The digits on the front of your credit card</span>
+          <input id="PaymentDto_CreditCardNumber" name="PaymentDto.CreditCardNumber" tabindex="5" type="text" value=""></div>
+
+        <div class="input-group cc-expiry">
+          <label for="PaymentDto_CreditCardExpiryDateMonthId">Expiration date:</label>            <span class="help">The date your credit card expires. Find this on the front of your credit card</span>
+          <select class="month" id="PaymentDto_CreditCardExpiryDateMonthId" name="PaymentDto.CreditCardExpiryDateMonthId" tabindex="6"><option selected="selected"></option>
+            <option value="1">01 - Jan</option>
+            <option value="2">02 - Feb</option>
+            <option value="3">03 - Mar</option>
+            <option value="4">04 - Apr</option>
+            <option value="5">05 - May</option>
+            <option value="6">06 - Jun</option>
+            <option value="7">07 - Jul</option>
+            <option value="8">08 - Aug</option>
+            <option value="9">09 - Sep</option>
+            <option value="10">10 - Oct</option>
+            <option value="11">11 - Nov</option>
+            <option value="12">12 - Dec</option>
+            </select>/<select class="year" id="PaymentDto_CreditCardExpiryDateYearId" name="PaymentDto.CreditCardExpiryDateYearId" tabindex="7"><option selected="selected"></option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+            <option value="2031">2031</option>
+            <option value="2032">2032</option>
+            <option value="2033">2033</option>
+            <option value="2034">2034</option>
+        </select></div>
+        <div class="input-group cc-verification">
+          <label for="PaymentDto_VerificationNumber">Security Code:</label>            <span class="alternative">(or CCV or CVC):</span>
+          <span class="help">Last 3 digits on the back of your Visa or Mastercard or 4 digits on the front of your AMEX card.</span>
+          <div class="hint">
+            <div class="other"></div>
+            <div class="amex"></div>
+            <input class="link-like" type="submit" name="ShowPaymentHint" value="enlarge">
+          </div>
+          <input id="PaymentDto_VerificationNumber" name="PaymentDto.VerificationNumber" tabindex="8" type="text" value=""></div>
+
+      </fieldset>    
+    </div>
+
+
+
+    <button class="buy-button-primary buy-now" tabindex="8" autocomplete="off" name="SubmitPayment">
+      Buy Now <span></span>
+    </button>
+  </div>
+</div>

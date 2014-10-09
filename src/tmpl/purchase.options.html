@@ -1,0 +1,150 @@
+<div class='options-list'>
+  <dl>
+    <dt>
+      <h4 data-ng-bind-template='{{optionsModel.snowSportsOption.optionTitle}} Option'></h4>
+        <div class="input-group checkbox">
+          <input id='snow-cover' name='snow-cover' type='checkbox' data-ng-model='optionsModel.snowSportsOption.isSelected'>
+          <label for='snow-cover'>Are you doing snow sports?</label>
+        </div>
+    </dt>
+    <dd class=''>
+      <label data-ng-show='optionsModel.snowSportsOption.isSelected' data-ng-bind='optionsModel.snowSportsOption.formattedOptionPremium'></label>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt>
+      <h4 data-ng-bind-template='{{optionsModel.excessBuyoutOption.optionTitle}} Option'></h4>
+      <p>Would you like to reduce your policy excess?</p>
+      <div class='input-group checkbox'>
+        <input id='reduce-excess' name='reduce-excess' type='checkbox' data-ng-model='optionsModel.excessBuyoutOption.isSelected'>
+        <label for='reduce-excess' data-ng-bind-template='Yes, reduce my excess from 
+          {{optionsModel.excessBuyoutOption.formattedDefaultValue}} to
+          {{optionsModel.excessBuyoutOption.formattedBoughtOutValue}}'>
+        </label>
+      </div>
+      <p data-ng-bind-template='An excess of 
+        {{optionsModel.excessBuyoutOption.formattedDefaultValue}} applies to many benefits. By selecting this option you can reduce your excess to 
+        {{optionsModel.excessBuyoutOption.formattedBoughtOutValue}}.'>
+      </p>
+    </dt>
+    <dd class=''>
+      <label data-ng-show='optionsModel.excessBuyoutOption.isSelected' data-ng-bind='optionsModel.excessBuyoutOption.formattedOptionPremium'></label>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt>
+      <h4 data-ng-bind-template='{{optionsModel.rentalCarExcessOption.optionTitle}} Option'></h4>
+      <p data-ng-hide='optionsModel.rentalCarExcessOption.isMinimumExcessAboveZero()'>
+        If you hire a vehicle on your trip and it is stolen or damaged, our insurance covers up to {{optionsModel.rentalCarExcessOption.formattedMinimumRentalCarExcess}} of any excess you may be liable for from the hire company. You can choose to increase this to a maximum of {{optionsModel.rentalCarExcessOption.formattedMaximumRentalCarExcess}}.
+      </p>
+      <p data-ng-show='optionsModel.rentalCarExcessOption.isMinimumExcessAboveZero()'>
+        If you hire a vehicle on your trip and it is stolen or damaged, our insurance covers {{optionsModel.rentalCarExcessOption.formattedMinimumRentalCarExcess}} of any excess you may be liable for from the hire company. You can choose to purchase this cover, up to a maximum of {{optionsModel.rentalCarExcessOption.formattedMaximumRentalCarExcess}}.</text>
+      </p>
+      <div class="input-group full-width">
+        <span>Increase my car rental excess cover to:</span>
+        <select ng-model='optionsModel.rentalCarExcessOption.selectedExcessId'
+          data-ng-options='exc.Id as exc.ShortDescription for exc in optionsModel.rentalCarExcessOption.excessChoices'>
+        </select>
+      </div>
+    </dt>
+    <dd class=''>
+      <span data-ng-hide='optionsModel.rentalCarExcessOption.isCoverIncreased()'>No increased cover</span>
+      <label data-ng-show='optionsModel.rentalCarExcessOption.isCoverIncreased()' data-ng-bind='optionsModel.rentalCarExcessOption.formattedOptionPremium'></label>
+    </dd>
+  </dl>
+
+  <dl class=''>
+    <dt class=''>
+      <h4 data-ng-bind-template='{{optionsModel.specifiedItemsOption.optionTitle}} Option'></h4>
+      <div class=''>
+        <p>
+            If you have any high value items, you can add them here up to {{optionsModel.specifiedItemsOption.formattedMaxPerItemAmount}} per item and a total value that doesn't exceed {{optionsModel.specifiedItemsOption.formattedMaxTotalValueAmount}}. Values must be supported by an original purchase receipt or valuation.
+        </p>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th class='item-name'>
+                  Item name:
+                </th>
+                <th class='item-serial-number'>
+                  Serial number:
+                </th>
+                <th class='item-value'>
+                  Value ({{policyPurchaseModel.currencySymbol}}):
+                </th>
+                <th class='additional-premium'>
+                  Premium:
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr data-ng-repeat='specifiedItem in optionsModel.specifiedItemsOption.specifiedItems'>
+              <td class='item-name'>
+                <input type='text' data-ng-model='specifiedItem.name'>
+              </td>
+              <td class='item-serial-number'>
+                <input type='text' data-ng-model='specifiedItem.serialNumber'>
+              </td>
+              <td class='item-value'>
+                <input type='text' data-ng-model='specifiedItem.itemValue'>
+              </td>
+              <td class='additional-premium'>
+                <span data-ng-bind='specifiedItem.formattedItemPremium | default:""'></span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <button type='submit' data-ng-click='saveOptions()' class="cta-button-secondary">Update<span>&#xe014;</span></button>
+      </div>
+    </dt>
+    <dd class=''>
+      <span data-ng-hide='optionsModel.specifiedItemsOption.optionPremium'>No high value items specified</span>
+      <label data-ng-show='optionsModel.specifiedItemsOption.optionPremium' data-ng-bind='optionsModel.specifiedItemsOption.formattedOptionPremium'></label>
+    </dd>
+  </dl>
+
+  <dl data-ng-show='optionsModel.donation.areDonationsEnabled'>
+    <dt>
+      <h4>Footprints Donation</h4>
+      <p>
+        {{policyPurchaseModel.brandCode}} helps provide opportunities to the people in the places in which we travel.
+        Before you buy your policy, you can choose to add a small donation to a community project of your choice.
+        Thousands of these tiny donations add up to create a much larger change, of which we are all proud.
+      </p>
+      <div class="input-group checkbox">
+        <label for='donate-to-footprints' class=''>Would the customer like to donate to a Footprint's Project</label>
+        <input id='donate-to-footprints' name='donate-to-footprints' type='checkbox' data-ng-model='optionsModel.donation.isDonationProjectSelected'/>
+      </div>
+    </dt>
+    <dd class=''>
+      <span data-ng-hide='optionsModel.donation.donationAmount'>No donation included</span>
+      <label data-ng-show='optionsModel.donation.donationAmount' data-ng-bind='optionsModel.donation.formattedDonationAmount'></label>
+    </dd>
+  </dl>
+</div>
+
+<ul class="projects-list" data-ng-show='optionsModel.donation.isDonationProjectSelected'>
+  <li data-ng-repeat='project in optionsModel.donation.donationProjects' data-ng-class='{selected: project.isSelected(optionsModel.donation.donationProjectId)}'>
+    <span>
+      <input name='donate-to-footprints' type='radio' data-ng-model='optionsModel.donation.donationProjectId' data-ng-value='project.id'/>
+    </span>
+    <div class="description">
+      <label class='title' for='' data-ng-bind='project.projectTitle'></label>
+      <p class="details">
+        Location: <span data-ng-bind='project.CountryName'></span> Run by: <span data-ng-bind='project.partnerName'></span>
+      </p>
+      <p class='project-summary' data-ng-bind='project.projectSummary | default: "No summary currently available for this project"'></p>
+    </div>
+  </li>
+</ul>
+
+<div class="actions">
+  <div class="input-group">
+    <button type='submit' data-ng-click='saveOptionsAndContinue()' class="cta-button-primary">Continue<span>&#xe014;</span></button>
+  </div>
+</div>

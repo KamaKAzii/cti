@@ -1,0 +1,102 @@
+// _buttons.sass
+
+// Some resetty crap...
+// TODO: Get rid of this and make better markup
+.button-like
+  margin: 0 auto
+  a
+    +font-smoothing
+    color: $text-color-inverted
+
+.button-like,
+input[type='submit'],
+button
+  span
+    display: none
+
+// Button Buy Primary
+button.buy-button-primary,
+input.buy-button-primary,
+.buy-button-primary a
+  +hover-pointer
+  +background-image(linear-gradient($button-buy-primary-top, $button-buy-primary-bottom))
+  +font-smoothing
+  border-radius: 2px
+  border: none
+  position: relative
+  display: block
+  box-sizing: border-box
+  box-shadow: 0px 1px 0px 0px $button-buy-primary-shadow
+  color: $text-color-inverted
+  font-family: $font-theme
+  text-transform: uppercase
+  font-size: $font-size-large
+  line-height: $font-size-large + 4px
+  padding: 12px 50px 12px $gutter
+  margin: 0 auto
+  text-align: center
+  &:after
+    content: "\57"
+    font-family: $font-icon
+    position: absolute
+    font-size: $font-size-large
+    top: 12px
+    right: $gutter
+
+// Button Primary
+button.button-primary,
+input.button-primary,
+.button-primary
+  +background-image(linear-gradient($button-primary-top, $button-primary-bottom))
+  +font-smoothing
+  +hover-pointer
+  border-radius: 2px
+  position: relative
+  display: block
+  border: none
+  box-sizing: border-box
+  box-shadow: 0px 1px 0px 0px $button-primary-shadow
+  color: $text-color-inverted
+  font-family: $font-theme
+  text-transform: uppercase
+  font-size: $font-size-large
+  line-height: $font-size-large + 4px
+  padding: 12px 50px 12px $gutter
+  margin: 0 auto
+  text-align: center
+  &:after
+    content: "\57"
+    font-family: $font-icon
+    position: absolute
+    font-size: $font-size-large
+    top: 12px
+    right: $gutter
+
+// Button Tertiary
+button.button-tertiary,
+input.button-tertiary,
+.button-tertiary
+  +background-image(linear-gradient($button-tertiary-top, $button-tertiary-bottom))
+  +font-smoothing
+  +hover-pointer
+  border-radius: 2px
+  position: relative
+  display: block
+  border: none
+  box-sizing: border-box
+  box-shadow: 0px 1px 0px 0px $button-tertiary-shadow
+  color: $text-color-inverted
+  font-family: $font-theme
+  text-transform: uppercase
+  font-size: $font-size-large
+  line-height: $font-size-large + 4px
+  padding: 12px 50px 12px $gutter
+  margin: 0 auto
+  text-align: center
+  &:after
+    content: "\57"
+    font-family: $font-icon
+    position: absolute
+    font-size: $font-size-large
+    top: 12px
+    right: $gutter

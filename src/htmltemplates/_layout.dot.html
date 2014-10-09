@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-jss ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="{{= it.document.html_class }}" lang="en">
+<!--<![endif]-->
+  <head>
+
+    <title>{{= it.document.title }}</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link href="styles/screen.cti.css" rel="stylesheet" type="text/css">
+
+    <script src="scripts/compatibility/modernizr-2.0.6.js" type="text/javascript"></script>
+    <script src="scripts/jquery/jquery-1.7.1.js"></script>
+
+    <script src="scripts/jquery/placeholderPlus/jquery.placeholderPlus.js"></script>
+    <script src="scripts/jquery/autocomplete/jquery.autocomplete.js"></script>
+    <script src="scripts/jquery/dropdownPicker/jquery.dropdownPicker.js"></script>
+    <script src="scripts/jquery/datePicker/jquery.datePicker.js"></script>
+    <script src="scripts/jquery/datePicker/jquery.datePickerForSelects.js"></script>
+
+    <script src="scripts/custom/init-qqc.js"></script>
+    <script src="scripts/custom/trip-summary.js"></script>
+    <script src="scripts/custom/benefits.js"></script>
+
+    <script src="//localhost:35729/livereload.js"></script>
+
+    <!-- // BEGIN WEINRE // -->
+    <!-- <script src="http://6h696z1.yorkstreet.local:8080/target/target-script-min.js" async="true"></script> -->
+    <!-- // END WEINRE // -->
+
+  </head>
+
+  <body id="{{= it.document.body_id }}" class="{{= it.document.body_class }}">
+
+    <div class="mobile-landscape-visibility-check"></div>
+    <div class="tablet-visibility-check"></div>
+    <div class="thin-desktop-visibility-check"></div>
+
+    <nav>
+      <div class="header">
+        <div class="logo"></div>
+        <div class="mobile-toggle"></div>
+        <ul>
+          <li><a href="/why-cheap">Why Cheap?</a></li>
+          <li><a href="/why-cheap">Benefits</a></li>
+          <li><a href="/why-cheap">Emergencies &amp; Claims</a></li>
+          <li><a href="/why-cheap">Travel on the Cheap</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="content-wrapper">
+      <div class="content">
+        {{= it.document }}
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer">
+        <div class="logo"></div>
+        <ul class="links">
+          <li><a href="/">Contact us</a></li>
+          <li><a href="/">Product Disclosure Statement</a></li>
+          <li><a href="/">Sitemap</a></li>
+          <li><a href="/">Privacy</a></li>
+        </ul>
+        <div class="recommended">
+          <h2>Recommended</h2>
+          <p>
+          See how others rate Cheap Travel Insurance
+          - visit <a href="/">Travel Insurance Compared</a>,
+          a leading Australian travel insurance review web site.
+          </p>
+        </div>
+        <div class="disclaimer">
+          Cheap Travel Insurance Pty Limited ABN 53 124 378 301, AR338488, is an authorised representative of Cerberus Special Risks Pty Limited ABN 81 115 932 173, AFS Licence No. 308461. This is general advice and you should consider if this product suits your needs. Before you buy, please read the Product Disclosure Statement. This insurance is underwritten by certain underwriters at Lloyd’s.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      $(function() {
+
+        $(".mobile-toggle").on("click", function(e) {
+          $("nav ul").toggle();
+        });
+
+      });
+    </script>
+  </body>
+</html>

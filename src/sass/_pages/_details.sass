@@ -1,0 +1,31 @@
+// _details.sass
+
+body#policy-details
+  .panel.inline-sign-in,
+  .adult-traveller > p,
+  .pre-ex-condition,
+  .membership-options
+    display: none
+  .input-container .reasons > h3,
+  .input-container.adult-traveller fieldset > h3
+    +input-container-h3-hax
+    &:last-child
+      margin-bottom: 0
+  .input-group.address-2,
+  .input-group.state
+    min-height: none
+    min-height: initial
+  .adult-traveller
+    .input-group
+      +input-group-third-width
+  .address-details
+    .input-group
+      +input-group-half-width
+      clear: left
+    .input-group.city,
+    .input-group.postcode
+      +input-group-third-width
+  @media all and (max-width: $mq-mobile-landscape)
+    .input-group.tel-home,
+    .input-group.address-2
+      display: none

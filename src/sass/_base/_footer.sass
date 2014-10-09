@@ -1,0 +1,52 @@
+// _footer.sass
+
+.footer
+  +layout-box
+  padding-top: $blh
+  position: relative
+  @media all and (max-width: $mq-tablet)
+    margin: 0 $gutter / 2
+  @media all and (max-width: $mq-mobile-landscape)
+    margin: 0 $gutter
+  .logo
+    width: 146px
+    height: 47px
+    background: transparent url('/Content/styles/i/logo.png') no-repeat left top
+    @media only screen and (-webkit-min-device-pixel-ratio: 2)
+      background: transparent url('/Content/styles/i/logo@2x.png') no-repeat left top
+      background-size: 100% 100%
+  .links
+    float: left
+    width: 285px
+    border-top: 1px solid $border-color-medium
+    padding-top: $blh / 2
+    li
+      +font-smoothing
+      font-weight: 300
+      font-family: $font-theme
+      text-transform: uppercase
+      line-height: $font-size-xlarge
+  .recommended
+    +callout-container
+    position: absolute
+    top: $blh
+    right: 0
+    width: 40%
+    max-width: 305px
+  .disclaimer
+    float: left
+    padding: $blh $gutter 0
+    border-top: 1px solid $border-color-medium
+    color: $text-color-light
+    font-size: $font-size-vsmall
+    line-height: $font-size-vsmall + 4px
+    text-align: center
+  @media all and (max-width: $mq-mobile-landscape)
+    .recommended
+      display: none
+    .links
+      border: none
+      li
+        line-height: $font-size-huge
+    .disclaimer
+      padding: $blh 0 0

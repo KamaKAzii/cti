@@ -1,0 +1,26 @@
+<div class="modal-whitewash"></div>
+<div class="modal-content email-quote">
+  <h2>Email your quote</h2>
+  <button class="button-tertiary close" name="CloseEmailQuote"><span></span></button>
+
+  <p>Enter an email address and we'll send a link from which you can retrieve your quote at a later time.</p>
+  <div class="input-group full-width">
+    <input class="email-input" id="ActiveQuoteDto_EmailQuoteAddress" name="ActiveQuoteDto.EmailQuoteAddress" placeholder="Enter your email" type="text" value="">
+  </div>
+  <div class="actions">
+    <div class="input-group">
+      <button class="button-primary" data-analytics-id="email-quote" name="SubmitEmailQuote">
+        Send <span></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $modalComponents = $(".modal-content, .modal-whitewash").hide();
+
+  $("body").on("click", ".modal-content .close", function(e) {
+    $modalComponents.hide();
+    e.preventDefault();
+  });
+</script>

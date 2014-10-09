@@ -1,0 +1,491 @@
+
+<!-- detailsForm start -->
+<form name='detailsForm' novalidate>
+
+  <div class='purchase-path-panel adult-traveller'>
+    <div class='search-for-traveller'>
+      <span>Bought with us before?</span>
+      <button class='button-tertiary' name='' >Search Traveller</button>
+    </div>
+
+    <ng-form data-ng-repeat='traveller in detailsModel.travellers' name="travellerForm">
+
+    <fieldset>
+      <h3 data-ng-bind='"Adult Traveller" | ordinalTitle:numberOfTravellers:$index'></h3>
+
+      <!--
+        @if (Model.ActiveQuoteDto.PreviousPolicyTravellers != null && Model.ActiveQuoteDto.PreviousPolicyTravellers.Any())
+        {
+          using (Html.BeginContainer('div',
+            m => m.ActiveQuoteDto.Travellers[i].CopyFromTravellerId, new[] { 'input-group', 'previous-traveller' }))
+          {
+            @Html.LabelFor(m => m.ActiveQuoteDto.Travellers[i].CopyFromTravellerId,
+              string.Format('Select {0} traveller', 
+                NumberHelper.SmallNumberToOrdinal(i + 1, false).ToLower()))
+            @Html.DropDownListFor(
+              m => m.ActiveQuoteDto.Travellers[i].CopyFromTravellerId,
+              Model.ActiveQuoteDto.PreviousPolicyTravellers.Select(t =>
+                new SelectListItem
+                {
+                  Value = t.Id.ToString(),
+                  Text = string.Format('{0} {1}', t.FirstName, t.Surname),
+                  Selected = Model.ActiveQuoteDto.Travellers[i].CopyFromTravellerId.HasValue &&
+                    Model.ActiveQuoteDto.Travellers[i].CopyFromTravellerId.Value == t.Id
+                }).ToList(),
+              new SelectListItem
+              {
+                Value = null,
+                Text = null,
+                Selected = !Model.ActiveQuoteDto.Travellers[i].CopyFromTravellerId.HasValue
+              })
+            <button class='button-tertiary' name='@ActionNames.UpdateTravellers' >Update</button>
+          }
+        }
+ -->
+
+      <div>
+        <label for=''>Title</label>
+        <select ng-model='traveller.titleId'
+          data-ng-options='ti.Id as ti.Title for ti in personTitles'>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for=''>First Name</label>
+        <input type='text' name='firstName' data-ng-model='traveller.firstName' required/>
+      </div>
+
+
+      <!--         @using (Html.BeginContainer('div', m => m.ActiveQuoteDto.Travellers[i].FirstName, 'input-group first-name'))
+        {
+          @Html.LabelFor(m => m.ActiveQuoteDto.Travellers[i].FirstName, 'First name')
+          @Html.TextBoxFor(m => m.ActiveQuoteDto.Travellers[i].FirstName)
+        }
+ -->
+
+      <div class="input-group">
+        <label for=''>Last Name</label>
+        <input type='text' name='lastName' data-ng-model='traveller.lastName' required/>
+      </div>
+
+
+      <!--
+        @using (Html.BeginContainer('div', m => m.ActiveQuoteDto.Travellers[i].Surname, 'input-group last-name'))
+        {
+          @Html.LabelFor(m => m.ActiveQuoteDto.Travellers[i].Surname, 'Last name')
+          @Html.TextBoxFor(m => m.ActiveQuoteDto.Travellers[i].Surname)
+        }
+ -->
+
+      <!--
+        @{
+          string[] dateOfBirthCssClasses =
+            (Model.ActiveQuoteDto.Travellers[i].IsEldestTraveller && Model.ActiveQuoteDto.IsAgeRangeChanged)
+              ? new[] { 'input-group', 'dob', 'error' }
+              : new[] { 'input-group', 'dob' };
+        }
+ -->
+
+      <div class="input-group">
+        <label for=''>Date Of Birth</label>
+        <select ng-model='traveller.dobDay'
+          data-ng-options='dd for dd in dateOfBirthRanges.days'>
+        </select>
+        <select ng-model='traveller.dobMonth'
+          data-ng-options='dd for dd in dateOfBirthRanges.months'>
+        </select>
+        <select ng-model='traveller.dobYear'
+          data-ng-options='dd for dd in dateOfBirthRanges.years'>
+        </select>
+      </div>
+
+      <!--
+        @using (Html.BeginContainer('div', m => m.ActiveQuoteDto.Travellers[i].DateOfBirth, dateOfBirthCssClasses))
+        {
+          @Html.LabelFor(m => m.ActiveQuoteDto.Travellers[i].DateOfBirthDay, 'Date of birth')
+          @Html.DropDownListFor(
+            m => m.ActiveQuoteDto.Travellers[i].DateOfBirthDay,
+            Model.ActiveQuoteDto.Travellers[i].DateOfBirthDays,
+            Model.ActiveQuoteDto.Travellers[i].DateOfBirthDay, '')
+          @Html.DropDownListFor(
+            m => m.ActiveQuoteDto.Travellers[i].DateOfBirthMonth,
+            Model.ActiveQuoteDto.Travellers[i].DateOfBirthMonths,
+            Model.ActiveQuoteDto.Travellers[i].DateOfBirthMonth, '')
+          @Html.DropDownListFor(
+            m => m.ActiveQuoteDto.Travellers[i].DateOfBirthYear,
+            Model.ActiveQuoteDto.Travellers[i].DateOfBirthYears,
+            Model.ActiveQuoteDto.Travellers[i].DateOfBirthYear, '')
+        }
+ -->
+
+      <!--
+        @{
+          Dictionary<string, object> commonAttributes = new Dictionary<string, object>();
+          if (i > 0)
+          {
+            commonAttributes.Add('placeholder', 'Optional');
+          }
+        }
+ -->
+
+      <div class="input-group">
+        <label for=''>Email Address</label>
+        <input type='email' name='email' data-ng-model='traveller.emailAddress' data-ng-blur='visitedEmail = true' required/>
+      </div>
+
+
+      <!--
+        @using (Html.BeginContainer('div', m => m.ActiveQuoteDto.Travellers[i].Email, 'input-group email'))
+        {
+          if (Model.ActiveQuoteDto.IsEmailSetToNullAddress && i == 0)
+          {
+            <div class='no-email-purchase-toggle'>
+              <button class='link-like' name='@ActionNames.DisableNoEmailPurchase'>Re-enable email</button>
+            </div>
+            @Html.LabelFor(m => m.ActiveQuoteDto.Travellers[i].Email, 'Email address')
+            @Html.TextBoxFor(m => m.ActiveQuoteDto.Travellers[i].Email, new Dictionary<string, object>{{'disabled', 'disabled'}, { 'class', 'disabled' }})
+          }
+          else
+          {
+            if (i == 0)
+            {
+              <div class='no-email-purchase-toggle'>
+                <button class='link-like' name='@ActionNames.EnableNoEmailPurchase'>No Email?</button>
+              </div>          
+            }
+            @Html.LabelFor(m => m.ActiveQuoteDto.Travellers[i].Email, 'Email address')
+            @Html.TextBoxFor(m => m.ActiveQuoteDto.Travellers[i].Email, commonAttributes)
+          }
+
+        }
+ -->
+
+      <div class="input-group">
+        <label for=''>Home Phone</label>
+        <input type='text' name='homePhone' data-ng-model='traveller.homePhoneNumber'/>
+      </div>
+
+      <!--
+        @using (Html.BeginContainer('div', m => m.ActiveQuoteDto.Travellers[i].LandlinePhoneNumber, 'input-group tel-home'))
+        {
+          @Html.LabelFor(m => m.ActiveQuoteDto.Travellers[i].LandlinePhoneNumber, 'Home phone')
+          @Html.TextBoxFor(m => m.ActiveQuoteDto.Travellers[i].LandlinePhoneNumber, commonAttributes)
+        }
+ -->
+
+      <div class="input-group">
+        <label for=''>Mobile</label>
+        <input type='text' name='mobilePhone' data-ng-model='traveller.mobilePhoneNumber' data-ng-blur='traveller.validatePhoneNumbers()' />
+      </div>
+
+      <!--
+        @using (Html.BeginContainer('div', m => m.ActiveQuoteDto.Travellers[i].MobilePhoneNumber, 'input-group tel-mobile'))
+        {
+          @Html.LabelFor(m => m.ActiveQuoteDto.Travellers[i].MobilePhoneNumber, 'Mobile')
+          @Html.TextBoxFor(m => m.ActiveQuoteDto.Travellers[i].MobilePhoneNumber, commonAttributes)
+        }
+ -->        
+
+
+      <ul class="input-validation-errors">
+        <li ng-show='traveller.arePhoneNumbersInvalid' class='form-validation-error'>Either a home phone or mobile phone number should be provided.</li>
+        <li ng-show='travellerForm.email.$error.required && !travellerForm.email.$pristine' class='form-validation-error'>An email address is required.</li>
+        <li ng-show='travellerForm.email.$error.email && !travellerForm.email.$pristine && visitedEmail' class='form-validation-error'>That address does not seem to be valid.</li>
+        <li ng-show='traveller.isDateOfBirthInvalid' class='form-validation-error'>Values should be chosen for all date of birth fields.</li>
+        <li ng-show='travellerForm.lastName.$invalid && !travellerForm.lastName.$pristine' class='form-validation-error'>The traveller's surname is required.</li>
+        <li ng-show='travellerForm.firstName.$invalid && !travellerForm.firstName.$pristine' class='form-validation-error'>The traveller's first name is required.</li>
+      </ul>
+
+      </fieldset>
+      </ng-form>
+
+    </div>
+
+    <div class='purchase-path-panel dependent-traveller'>
+
+      <h3>Children / Dependents</h3>
+
+      <div class=''>
+        <label for='' data-ng-bind-template='Number of dependent children under the age of {{ detailsModel.maxDependentAge }} to include in policy:'></label>
+        <select ng-model='detailsModel.dependentCount'
+          data-ng-options='dpc for dpc in detailsModel.dependentCountRange'>
+        </select>
+      </div>
+
+      <ng-form data-ng-repeat='dependent in detailsModel.dependents' name='dependentForm'>
+      <fieldset>
+
+        <div>
+          <label for=''>Title</label>
+          <select ng-model='dependent.titleId'
+            data-ng-options='ti.Id as ti.Title for ti in personTitles'>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for=''>First Name</label>
+          <input type='text' name='firstName' data-ng-model='dependent.firstName' required/>
+        </div>
+
+        <div class="input-group">
+          <label for=''>Last Name</label>
+          <input type='text' name='lastName' data-ng-model='dependent.lastName' required/>
+        </div>
+
+        <div class="input-group">
+          <label for=''>Date Of Birth</label>
+          <select ng-model='dependent.dobDay'
+            data-ng-options='dd for dd in dateOfBirthRanges.days'>
+          </select>
+          <select ng-model='dependent.dobMonth'
+            data-ng-options='dd for dd in dateOfBirthRanges.months'>
+          </select>
+          <select ng-model='dependent.dobYear'
+            data-ng-options='dd for dd in dateOfBirthRanges.years'>
+          </select>
+        </div>
+
+        <ul class="input-validation-errors">
+          <li ng-show='dependentForm.firstName.$invalid && !dependentForm.firstName.$pristine' class='form-validation-error'>The dependent's first name is required.</li>
+          <li ng-show='dependentForm.lastName.$invalid && !dependentForm.lastName.$pristine' class='form-validation-error'>The dependent's surname is required.</li>
+          <li ng-show='dependent.isDateOfBirthInvalid' class='form-validation-error'>Values should be chosen for all date of birth fields.</li>
+        </ul>
+
+      </fieldset>
+      </ng-form>
+
+
+      <!--     @for (int i = 0; i < Model.Dependents.Count; i++)
+      {
+          if (!Model.Dependents[i].IsDeleted && !Model.Dependents[i].IsUIDeleted)
+          {
+              <fieldset>
+                  @if (Model.PreviousPolicyDependents != null &&
+                      Model.PreviousPolicyDependents.Any())
+                  {
+                      using (Html.BeginContainer('div',
+                          m => m.Dependents[i].CopyFromDependentId,
+                          new[] {'input-group', 'previous-dependent'}))
+                      {
+                          @Html.LabelFor(m => m.Dependents[i].CopyFromDependentId,
+                              string.Format('Select {0} Dependent', NumberHelper.SmallNumberToOrdinal(i + 1, false)))
+                          @Html.DropDownListFor(
+                              m => m.Dependents[i].CopyFromDependentId,
+                              Model.PreviousPolicyDependents.Select(d =>
+                                  new SelectListItem
+                                  {
+                                      Value = d.Id.ToString(),
+                                      Text = string.Format('{0} {1}', d.FirstName, d.Surname),
+                                      Selected = Model.Dependents[i].CopyFromDependentId.HasValue &&
+                                          Model.Dependents[i].CopyFromDependentId.Value == d.Id
+                                  }).ToList(),
+                              new SelectListItem
+                              {
+                                  Value = null,
+                                  Text = null,
+                                  Selected = !Model.Dependents[i].CopyFromDependentId.HasValue
+                              })
+                          <input type='submit' name='@ActionNames.UpdateDependents' value='Update' />
+                      }
+                  }
+                  @using (Html.BeginContainer('div', m => m.Dependents[i].FirstName, 'input-group first-name'))
+                  {
+                      @Html.LabelFor(m => m.Dependents[i].FirstName, 'First Name:')
+                      @Html.TextBoxFor(m => m.Dependents[i].FirstName)
+                  }
+                  @using (Html.BeginContainer('div', m => m.Dependents[i].Surname, 'input-group surname'))
+                  {
+                      @Html.LabelFor(m => m.Dependents[i].Surname, 'Last Name:')
+                      @Html.TextBoxFor(m => m.Dependents[i].Surname)
+                  }
+                  @using (Html.BeginContainer('div', m => m.Dependents[i].DateOfBirth, 'input-group dob'))
+                  {
+                      @Html.LabelFor(m => m.Dependents[i].DateOfBirthDay, 'Date of Birth:')
+                      @Html.DropDownListFor(
+                          m => m.Dependents[i].DateOfBirthDay,
+                          Model.Dependents[i].DateOfBirthDays,
+                          Model.Dependents[i].DateOfBirthDay, '')
+                      @Html.DropDownListFor(
+                          m => m.Dependents[i].DateOfBirthMonth,
+                          Model.Dependents[i].DateOfBirthMonths,
+                          Model.Dependents[i].DateOfBirthMonth, '')
+                      @Html.DropDownListFor(
+                          m => m.Dependents[i].DateOfBirthYear,
+                          Model.Dependents[i].DateOfBirthYears,
+                          Model.Dependents[i].DateOfBirthYear, '')
+                  }
+
+           @if (Model.HasPreExCondition.HasValue && Model.HasPreExCondition.Value &&
+                  Model.PolicyOptions.Any(po => po.PolicyTravelClearOptionDto != null))
+           {
+             <div class='pre-ex-condition'>
+               @Html.ErrorMessageListFor(Html.ErrorMessageFor(
+                 m => m.PolicyOptions))  
+
+               @{
+                 var policyOptionDto = Model.PolicyOptions.First(
+                   po => po.PolicyTravelClearOptionDto != null 
+                     && po.PolicyTravelClearOptionDto.DependentSurrogateKey
+                       == Model.Dependents[i].SurrogateKey);
+
+                 int dependentIndex = Model.PolicyOptions.IndexOf(policyOptionDto);
+               }
+
+               <div class='input-group bool-radios has-pre-ex'>
+                 <h4>Does this dependent have a pre-existing medical condition?</h4>
+
+                 @Html.RadioButtonFor(m => m.PolicyOptions[dependentIndex]
+                   .PolicyTravelClearOptionDto.HasPreExCondition, 'true',
+                   new Dictionary<string, object>
+                   {
+                     { 'id', 'optInForScreening'},
+                     {'autocomplete', 'false'}
+                   })
+                 <label>Yes</label>
+                 @Html.RadioButtonFor(m => m.PolicyOptions[dependentIndex]
+                   .PolicyTravelClearOptionDto.HasPreExCondition, 'false',
+                   new Dictionary<string, object>
+                   {
+                     { 'id', 'optInForScreening'},
+                     {'autocomplete', 'false'}
+                   })
+                 <label>No</label>
+               </div>
+
+               <div class='input-group bool-radios want-cover'>
+                 <h4>Does this dependent want to apply for pre-existing medical conditions cover?</h4>
+                 @Html.RadioButtonFor(m => m.PolicyOptions[dependentIndex]
+                   .PolicyTravelClearOptionDto.IsOptInForScreening, 'true',
+                   new Dictionary<string, object>
+                   {
+                     { 'id', 'optInForScreening'},
+                     {'autocomplete', 'false'}
+
+                   })
+                 <label>Yes</label>
+                 @Html.RadioButtonFor(m => m.PolicyOptions[dependentIndex]
+                   .PolicyTravelClearOptionDto.IsOptInForScreening, 'false',
+                   new Dictionary<string, object>
+                   {
+                     { 'id', 'optInForScreening'},
+                     {'autocomplete', 'false'}
+
+                   })
+                 <label>No</label>
+               </div>
+               @Html.ErrorMessageListFor(Html.ErrorMessageFor(
+                 m => m.PolicyOptions[dependentIndex]
+                   .PolicyTravelClearOptionDto.HasPreExCondition, true))  
+             </div>
+            } 
+                  @Html.ErrorMessageListFor(
+                      Html.ErrorMessageFor(m => m.Dependents[i].Id, true, false),
+                      Html.ErrorMessageFor(m => m.Dependents[i].FirstName, true),
+                      Html.ErrorMessageFor(m => m.Dependents[i].Surname, true),
+                      Html.ErrorMessageFor(m => m.Dependents[i].DateOfBirth,
+                          m => m.Dependents[i].DateOfBirthDay, true))
+              </fieldset>
+          }
+      }  
+   -->
+    </div>
+
+    <div class='purchase-path-panel address-details'>
+
+      <h3>Address in your country of residence</h3>
+
+      <ng-form class="" name="addressForm">
+      <fieldset>
+
+      <div class="input-group half-width">
+        <label for=''>Street Address</label>
+        <input type='text' name='addressLine1' data-ng-model='detailsModel.addressLine1' required placeholder='Street address line 1'/>
+      </div>
+
+      <div class="input-group half-width clear">
+        <input type='text' name='addressLine2' data-ng-model='detailsModel.addressLine2' placeholder='Street address line 2'/>
+      </div>
+
+      <div class="input-group half-width clear">
+        <label for=''>City</label>
+        <input type='text' name='addressLine3' data-ng-model='detailsModel.addressLine3' required/>
+      </div>
+
+      <div class="preselected-country input-group clear">
+        <label>Country</label>
+        <p data-ng-bind="detailsModel.countryName"></p>
+      </div>
+
+      <ul class="input-validation-errors">
+        <li ng-show='addressForm.addressLine1.$invalid && !addressForm.addressLine1.$pristine' class='form-validation-error'>The street address is required.</li>
+        <li ng-show='addressForm.addressLine3.$invalid && !addressForm.addressLine3.$pristine' class='form-validation-error'>The city/suburb is required.</li>
+      </ul>
+
+
+
+      <!--       @using (Html.BeginContainer("div", m => m.ActiveQuoteDto.AddressLine1, "input-group address-1"))
+      {
+        @Html.LabelFor(m => m.ActiveQuoteDto.AddressLine1, "Street Address")
+        @Html.TextBoxFor(m => m.ActiveQuoteDto.AddressLine1, new { placeholder = "Street address line 1" })
+      }
+      @using (Html.BeginContainer("div", m => m.ActiveQuoteDto.AddressLine2, "input-group address-2"))
+      {
+        @Html.TextBoxFor(m => m.ActiveQuoteDto.AddressLine2, new { placeholder = "Street address line 2" })
+      }
+      @using (Html.BeginContainer("div", m => m.ActiveQuoteDto.AddressLine3, "input-group city"))
+      {
+        @Html.LabelFor(m => m.ActiveQuoteDto.AddressLine3, cityLabel)
+        @Html.TextBoxFor(m => m.ActiveQuoteDto.AddressLine3)
+      }
+        @if (Model.IsProvinceDropdownVisible)
+        {
+          using (Html.BeginContainer("div", m => m.ActiveQuoteDto.ProvinceId, "input-group state"))
+          {
+            @Html.LabelFor(m => m.ActiveQuoteDto.ProvinceId, provinceLabel)
+            @Html.DropDownListFor(
+              m => m.ActiveQuoteDto.ProvinceId, 
+              Model.ActiveQuoteDto.PlanSaleCountryProvinces.OrderBy(p => p.LongDescription).Select(p =>
+                new SelectListItem
+                {
+                  Value = p.Id.ToString(),
+                  Text = p.LongDescription,
+                  Selected = p.Id == Model.ActiveQuoteDto.ProvinceId
+                }).ToList(), 
+              new SelectListItem
+              {
+                Value = string.Empty,
+                Text = "Select a State",
+                Selected = !Model.ActiveQuoteDto.ProvinceId.HasValue
+              })
+          }        
+        }
+        else if (Model.ActiveQuoteDto.IsProvinceRequired)
+        {
+          using (Html.BeginContainer("div", m => m.ActiveQuoteDto.AddressLine4, "input-group town"))
+          {
+            @Html.LabelFor(m => m.ActiveQuoteDto.AddressLine4, provinceLabel)
+            @Html.TextBoxFor(m => m.ActiveQuoteDto.AddressLine4)
+          }        
+        }
+
+      @using (Html.BeginContainer("div", m => m.ActiveQuoteDto.PostalCode, "input-group postcode"))
+      {
+        @Html.LabelFor(m => m.ActiveQuoteDto.PostalCode, postcodeLabel)
+        @Html.TextBoxFor(m => m.ActiveQuoteDto.PostalCode)
+      } -->
+
+    </fieldset>
+    </ng-form>
+
+  </div>
+
+  <p ng-show="detailsForm.$valid">The details are valid.</p>
+  <p ng-show="!detailsForm.$valid" class='form-debug-summary form-validation-error'>The details are not valid.</p>
+</form>
+
+
+<div class="actions">
+  <div class="input-group">
+    <button type='submit' class="cta-button-primary" data-ng-click='saveDetails()'>Continue</button>
+  </div>
+</div>
