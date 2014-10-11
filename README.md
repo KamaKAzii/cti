@@ -1,4 +1,4 @@
-CSC Rebranding
+CTI Rebranding
 =====================================
 
 Case study to illustrate a design which embraces current markup

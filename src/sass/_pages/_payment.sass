@@ -1,0 +1,18 @@
+// _payment.sass
+
+body#payment
+  $width-lhs: 73%
+  $width-rhs: 25%
+  .trip-summary
+    width: $width-lhs
+    float: left
+  .quote-summary-actions-wrapper
+    width: $width-rhs
+    float: right
+    .input-group
+      +input-group-full-width
+  .payment-leftside-button
+    +hide-on-mobile
+    .input-group:first-child
+      display: none
+  .dis

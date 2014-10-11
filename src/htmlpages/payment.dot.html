@@ -1,0 +1,301 @@
+{ 
+  "html_class": "",
+  "body_id": "payment",
+  "body_class": "",
+  "title": "Cheap Travel Insurance - Cheap travel insurance for Australians",
+  "template": "_layout.dot.html"
+}
+
+##SEPARATOR##
+
+
+<h2>Confirm &amp; Pay</h2>
+
+<form action="/PolicyPurchase/MultiTarget" id="policyForm" method="post">
+
+  {{= it.include('_breadcrumb') }}
+
+  <div class="trip-summary public">
+    <div class="trip-summary-content">
+
+      <input type="submit" class="edit link-like" data-analytics-id="open-edit-trip" name="EditTrip" value="Edit Trip">
+
+      <h4>Trip Summary</h4>
+      <dl class="destinations">
+        <dt>Travelling to</dt>
+        <dd>
+        Japan            </dd>
+      </dl>
+
+      <dl class="departure-date">
+        <dt>Departure Date</dt>
+        <dd>10 Oct 2014</dd>
+      </dl>
+      <dl class="return-date">
+        <dt>Return Date</dt>
+        <dd>16 Oct 2014</dd>
+      </dl>
+
+      <dl class="ages">
+        <dt>Ages:</dt>
+        <dd>
+        <span>34</span>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="quote-summary-actions-wrapper">
+
+    <div class="quote-summary">
+      <div class="quote-summary-content">
+        <h4>Quote Summary</h4>
+        <dl class="plan-name">
+          <dt>Plan</dt>
+          <dd> International Basic</dd>
+        </dl>
+        <dl class="base-policy">
+          <dt>Base Premium</dt>
+          <dd>$90.00</dd>
+
+        </dl>
+        <dl>
+          <dt>Options</dt>
+          <dd>$0.00</dd>
+        </dl>
+
+
+
+
+
+        <dl class="total-price">
+          <dt>Total</dt>
+          <dd>$90.00</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="payment-leftside-button">
+      <div class="input-group">
+        <button name="ShowQuoteReferenceModal" class="button-secondary">
+          Save &amp; Print quote
+          <span></span>
+        </button>
+      </div>
+      <div class="input-group">
+        <button name="OpenEmailQuote" class="button-secondary">
+          Email quote
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="display-container traveller-panel">
+    <div class="display-container-content traveller-and-dependent-details">
+      <h3>Traveller Details</h3>
+
+
+      <table class="traveller-details">
+        <thead>
+          <tr>
+            <th>Travellers</th>
+            <th>Date of Birth</th>
+            <th>Email</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="names">
+              Dfasdfads Sdfasdf
+            </td>
+            <td>
+              1 Jan 1980        </td>
+            <td>
+              sdafadsf@asdfasd.com
+            </td>
+            <td>
+              311241234
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+      <dl class="address-details">
+        <dt>Address</dt>
+        <dd>Fadsfasdf, Asdfasdf, New South Wales, 2341, Australia</dd>
+      </dl>
+
+
+
+
+      <div class="actions">
+        <a href="/PolicyPurchase/Open?enc=SVidgpxdQyuUClpAQtuIcrVsBvuY0bInRvnDlPl1-5Gml-r-re2VpicDe_avw-YZP-g2yypPPuGoZmGF9lDJS3sc-zSLkFt47UY8S0D6f0fLLZs_s_8KyB_hVLSEXCyxNccRhvvboh_xmRu-qDz5Zg%5E%5E">Edit Details</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="display-container payment-panel">
+    <div class="display-container-content options">
+      <h3>Payment Details</h3>
+      <dl class="options-list">
+        <dt>Base Premium</dt>
+        <dd>$90.00</dd>
+
+
+      </dl>
+      <div class="actions">
+        <a href="/Quote/SelectQuote?enc=kLg_wPS4F7AFuDMliLqLTeWdaCBGu_rnpORsGa9M3DeSX-4THwuFy14KXP0Qwevifdu0lZN5Uq0TBIwN9N42lwbb-paOUewp0geS04kmCyJv1D0F-DNHFId-BfCeWY-coxJJV2SxGLsIU-JxNWaeyaFUhmRBBuz6ERHlj_aBYTON1SfR6PtjSAr9yUyNE4msazlvBu1CbXZ4JwFVcj7C7g%5E%5E">Edit Options</a>
+      </div>
+    </div>
+
+
+
+
+    <div class="display-container-content options travelclear">
+
+      <dl class="options-list">
+        <dt>TravelClear Medical Cover</dt>
+        <dd>$0</dd>
+
+      </dl>
+
+      <div class="display-container-content traveller-and-dependent-details">
+        <table class="traveller-details travelclear">
+          <thead>
+            <tr>
+              <th class="name">Name</th>
+              <th class="outcome">Outcome</th>
+              <th class="excess">Excess</th>
+              <th class="premium">Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td class="name">
+                Dfasdfads Sdfasdf
+              </td>
+              <td class="outcome">
+
+                -
+
+              </td>
+
+              <td class="excess">
+                <label>
+                  -
+                </label>
+              </td>
+              <td class="premium">
+                <label>
+                  -
+                </label>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="display-container-content total">
+      <dl>
+        <dt>Total</dt>
+        <dd>$90.00</dd>
+      </dl>
+    </div>
+    </div>    <div class="display-container payment-details" id="payment-details">
+    <div class="display-container-content">
+      <img src="/Content/styles/i/thawte-logo.jpg" class="thawte">
+
+      <div class="credit-card-editor-wrapper">
+
+        <h3 class="info">Secure Payment <span class="encryption">This is a 128-Bit SSL encrypted payment</span></h3>
+        <fieldset>
+          <div class="card-types">
+            <label>We Accept</label>
+            <span><img src="/Image/Display?ImageTypeId=3&amp;ImageCode=TENDERTYPELOGO&amp;EntityCode=visa" alt="Visa"></span>
+            <span><img src="/Image/Display?ImageTypeId=3&amp;ImageCode=TENDERTYPELOGO&amp;EntityCode=mc" alt="MasterCard"></span>
+            <span><img src="/Image/Display?ImageTypeId=3&amp;ImageCode=TENDERTYPELOGO&amp;EntityCode=amex" alt="American Express"></span>
+          </div>
+
+          <div class="input-group cc-name">
+            <label for="PaymentDto_NameOnCreditCard">Name on card:</label>            <span class="help">The name on the front of your card</span>
+            <input class="name" id="PaymentDto_NameOnCreditCard" name="PaymentDto.NameOnCreditCard" tabindex="4" type="text" value="">            <input class="link-like set-name" type="submit" name="SetDefaultNameOnCard" tabindex="11" value="< Click to insert name of first traveller">
+          </div>
+          <div class="input-group cc-number">
+            <label for="PaymentDto_CreditCardNumber">Credit Card Number:</label>            <span class="help">The digits on the front of your credit card</span>
+            <input id="PaymentDto_CreditCardNumber" name="PaymentDto.CreditCardNumber" tabindex="5" type="text" value=""></div>
+
+          <div class="input-group cc-expiry">
+            <label for="PaymentDto_CreditCardExpiryDateMonthId">Expiration date:</label>            <span class="help">The date your credit card expires. Find this on the front of your credit card</span>
+            <select class="month" id="PaymentDto_CreditCardExpiryDateMonthId" name="PaymentDto.CreditCardExpiryDateMonthId" tabindex="6"><option selected="selected"></option>
+              <option value="1">01 - Jan</option>
+              <option value="2">02 - Feb</option>
+              <option value="3">03 - Mar</option>
+              <option value="4">04 - Apr</option>
+              <option value="5">05 - May</option>
+              <option value="6">06 - Jun</option>
+              <option value="7">07 - Jul</option>
+              <option value="8">08 - Aug</option>
+              <option value="9">09 - Sep</option>
+              <option value="10">10 - Oct</option>
+              <option value="11">11 - Nov</option>
+              <option value="12">12 - Dec</option>
+              </select>/<select class="year" id="PaymentDto_CreditCardExpiryDateYearId" name="PaymentDto.CreditCardExpiryDateYearId" tabindex="7"><option selected="selected"></option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
+              <option value="2031">2031</option>
+              <option value="2032">2032</option>
+              <option value="2033">2033</option>
+              <option value="2034">2034</option>
+          </select></div>
+          <div class="input-group cc-verification">
+            <label for="PaymentDto_VerificationNumber">Security Code:</label>            <span class="alternative">(or CCV or CVC):</span>
+            <span class="help">Last 3 digits on the back of your Visa or Mastercard or 4 digits on the front of your AMEX card.</span>
+            <div class="hint">
+              <div class="other"></div>
+              <div class="amex"></div>
+              <input class="link-like" type="submit" name="ShowPaymentHint" value="enlarge">
+            </div>
+            <input id="PaymentDto_VerificationNumber" name="PaymentDto.VerificationNumber" tabindex="8" type="text" value=""></div>
+
+        </fieldset>    
+      </div>
+
+
+
+      <button class="buy-button-primary buy-now" tabindex="8" autocomplete="off" name="SubmitPayment">
+        Buy Now <span></span>
+      </button>
+    </div>
+  </div>
+
+
+  <input name="SessionTokenPolicyPurchaseModel" type="hidden" value="0fa20946-353a-4ae6-90e5-9d75bb2ed940">
+</form>

@@ -3638,6 +3638,49 @@ input.button-primary:after,
 }
 
 /* line 76, ../sass/_base/_buttons.sass */
+button.button-secondary,
+input.button-secondary,
+.button-secondary {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #388ded), color-stop(100%, #4496f4));
+  background-image: -webkit-linear-gradient(#388ded, #4496f4);
+  background-image: -moz-linear-gradient(#388ded, #4496f4);
+  background-image: -o-linear-gradient(#388ded, #4496f4);
+  background-image: linear-gradient(#388ded, #4496f4);
+  -webkit-font-smoothing: antialiased;
+  border-radius: 2px;
+  position: relative;
+  display: block;
+  border: none;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 0px 0px #507ce0;
+  color: white;
+  font-family: Nunito;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 12px 50px 12px 16px;
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 13, ../sass/_base/_methods/_utilities.sass */
+button.button-secondary:hover,
+input.button-secondary:hover,
+.button-secondary:hover {
+  cursor: pointer;
+}
+/* line 96, ../sass/_base/_buttons.sass */
+button.button-secondary:after,
+input.button-secondary:after,
+.button-secondary:after {
+  content: "\57";
+  font-family: IconWorks;
+  position: absolute;
+  font-size: 18px;
+  top: 12px;
+  right: 16px;
+}
+
+/* line 105, ../sass/_base/_buttons.sass */
 button.button-tertiary,
 input.button-tertiary,
 .button-tertiary {
@@ -3668,7 +3711,7 @@ input.button-tertiary:hover,
 .button-tertiary:hover {
   cursor: pointer;
 }
-/* line 96, ../sass/_base/_buttons.sass */
+/* line 125, ../sass/_base/_buttons.sass */
 button.button-tertiary:after,
 input.button-tertiary:after,
 .button-tertiary:after {
@@ -4003,6 +4046,10 @@ input.placeholder {
 .content > .nav li {
   float: left;
   width: auto;
+}
+/* line 13, ../sass/_widgets/_breadcrumb.sass */
+.content .quote-reference {
+  display: none;
 }
 
 /* line 19, ../sass/_widgets/_breadcrumb.sass */
@@ -5550,4 +5597,31 @@ body#policy-details .address-details .input-group.postcode {
   body#policy-details .input-group.address-2 {
     display: none;
   }
+}
+
+/* line 6, ../sass/_pages/_payment.sass */
+body#payment .trip-summary {
+  width: 73%;
+  float: left;
+}
+/* line 9, ../sass/_pages/_payment.sass */
+body#payment .quote-summary-actions-wrapper {
+  width: 25%;
+  float: right;
+}
+/* line 12, ../sass/_pages/_payment.sass */
+body#payment .quote-summary-actions-wrapper .input-group {
+  width: 100%;
+  float: left;
+  margin-right: 0;
+}
+@media all and (max-width: 640px) {
+  /* line 14, ../sass/_pages/_payment.sass */
+  body#payment .payment-leftside-button {
+    display: none;
+  }
+}
+/* line 16, ../sass/_pages/_payment.sass */
+body#payment .payment-leftside-button .input-group:first-child {
+  display: none;
 }

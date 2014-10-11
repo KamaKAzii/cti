@@ -72,6 +72,35 @@ input.button-primary,
     top: 12px
     right: $gutter
 
+// Button Secondary
+button.button-secondary,
+input.button-secondary,
+.button-secondary
+  +background-image(linear-gradient($button-tertiary-top, $button-tertiary-bottom))
+  +font-smoothing
+  +hover-pointer
+  border-radius: 2px
+  position: relative
+  display: block
+  border: none
+  box-sizing: border-box
+  box-shadow: 0px 1px 0px 0px $button-tertiary-shadow
+  color: $text-color-inverted
+  font-family: $font-theme
+  text-transform: uppercase
+  font-size: $font-size-large
+  line-height: $font-size-large + 4px
+  padding: 12px 50px 12px $gutter
+  margin: 0 auto
+  text-align: center
+  &:after
+    content: "\57"
+    font-family: $font-icon
+    position: absolute
+    font-size: $font-size-large
+    top: 12px
+    right: $gutter
+
 // Button Tertiary
 button.button-tertiary,
 input.button-tertiary,
