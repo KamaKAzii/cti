@@ -1,7 +1,7 @@
 // _payment.sass
 
 body#payment
-  $width-lhs: 73%
+  $width-lhs: 72%
   $width-rhs: 25%
   .trip-summary
     width: $width-lhs
@@ -9,10 +9,48 @@ body#payment
   .quote-summary-actions-wrapper
     width: $width-rhs
     float: right
+    margin-bottom: 0
     .input-group
       +input-group-full-width
   .payment-leftside-button
     +hide-on-mobile
     .input-group:first-child
       display: none
-  .dis
+  .display-container
+    width: $width-lhs
+    clear: left
+  .display-container.payment-panel
+    display: none
+  .display-container.traveller-panel
+    position: relative
+    .actions
+      +link-like
+      font-size: $font-size-vsmall
+      position: absolute
+      top: 6px
+      right: 9px
+    dl
+      float: left
+      width: 31%
+      margin-right: 2%
+    .mobile
+      width: 30%
+    .address
+      width: 46%
+      margin-right: 0
+  @media all and (max-width: $mq-mobile-landscape)
+    .trip-summary,
+    .quote-summary-actions-wrapper,
+    .display-container
+      width: 100%
+      clear: both
+    .display-container.traveller-panel
+      .insured-travellers, .email
+        width: 68%
+        margin-right: 2%
+      .ages, .mobile
+        width: 30%
+        margin-right: 0
+      .address
+        width: 100%
+

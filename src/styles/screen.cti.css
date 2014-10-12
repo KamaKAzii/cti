@@ -3235,15 +3235,24 @@ select {
 
 /* line 3, ../sass/_base/_layout.sass */
 .content-wrapper {
-  background: url("/Content/styles/i/hero_background_1.jpg");
-  background-size: cover;
+  background: #90bbed;
+  background-image: url("/Content/styles/i/hero_background_1.jpg");
+  background-image: url("/Content/styles/i/hero_background_1.jpg"), linear-gradient(#90bbed, #a3d8f6);
+  background-size: contain;
   background-position: center top;
+  background-repeat: no-repeat;
   min-height: 600px;
   margin-bottom: 0;
   padding-bottom: 24px;
 }
+@media all and (max-width: 640px) {
+  /* line 3, ../sass/_base/_layout.sass */
+  .content-wrapper {
+    background-image: none;
+  }
+}
 
-/* line 11, ../sass/_base/_layout.sass */
+/* line 23, ../sass/_base/_layout.sass */
 .content-wrapper .content {
   margin: 0 auto;
   width: 95%;
@@ -3257,7 +3266,7 @@ select {
   clear: both;
 }
 @media all and (max-width: 770px) {
-  /* line 11, ../sass/_base/_layout.sass */
+  /* line 23, ../sass/_base/_layout.sass */
   .content-wrapper .content {
     width: auto;
     max-width: initial;
@@ -3265,19 +3274,19 @@ select {
   }
 }
 @media all and (max-width: 640px) {
-  /* line 11, ../sass/_base/_layout.sass */
+  /* line 23, ../sass/_base/_layout.sass */
   .content-wrapper .content {
     margin: 0;
   }
 }
 
 @media all and (max-width: 640px) {
-  /* line 16, ../sass/_base/_layout.sass */
+  /* line 28, ../sass/_base/_layout.sass */
   h1, .content > h2 {
     display: none;
   }
 }
-/* line 19, ../sass/_base/_layout.sass */
+/* line 31, ../sass/_base/_layout.sass */
 .mobile-landscape-visibility-check,
 .tablet-visibility-check,
 .thin-desktop-visibility-check {
@@ -3288,19 +3297,19 @@ select {
 }
 
 @media all and (max-width: 860px) {
-  /* line 28, ../sass/_base/_layout.sass */
+  /* line 40, ../sass/_base/_layout.sass */
   .thin-desktop-visibility-check {
     display: block;
   }
 }
 @media all and (max-width: 770px) {
-  /* line 31, ../sass/_base/_layout.sass */
+  /* line 43, ../sass/_base/_layout.sass */
   .tablet-visibility-check {
     display: block;
   }
 }
 @media all and (max-width: 640px) {
-  /* line 34, ../sass/_base/_layout.sass */
+  /* line 46, ../sass/_base/_layout.sass */
   .mobile-landscape-visibility-check {
     display: block;
   }
@@ -3478,54 +3487,26 @@ dl dd {
   float: left;
 }
 
-/* line 42, ../sass/_base/_elements.sass */
-.clear {
-  margin-bottom: 0;
-}
-
-/* line 46, ../sass/_base/_elements.sass */
-.panel {
-  background: white;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 5px;
-}
-/* line 4, ../sass/_base/_methods/_utilities.sass */
-.panel:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* line 50, ../sass/_base/_elements.sass */
-.input-container {
-  background: white;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 5px;
-  padding: 24px 16px 0;
-  box-sizing: border-box;
-}
-/* line 4, ../sass/_base/_methods/_utilities.sass */
-.input-container:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* line 54, ../sass/_base/_elements.sass */
-.input-container > h3 {
-  -webkit-font-smoothing: antialiased;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background: white;
-  line-height: 32px;
-  padding-left: 16px;
-  margin-bottom: 12px;
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-top: -24px;
-  margin-bottom: 16px;
-  margin-left: -16px;
-  padding: 0 16px;
+/* line 41, ../sass/_base/_elements.sass */
+table {
   width: 100%;
+  margin-bottom: 24px;
+}
+/* line 44, ../sass/_base/_elements.sass */
+table tr {
+  border-bottom: 1px solid #f6f6f6;
+}
+/* line 46, ../sass/_base/_elements.sass */
+table th {
+  font-weight: bold;
+}
+/* line 48, ../sass/_base/_elements.sass */
+table th, table td {
+  padding-right: 16px;
+}
+/* line 50, ../sass/_base/_elements.sass */
+table th:last-child, table td:last-child {
+  padding-right: 0;
 }
 
 /* line 5, ../sass/_base/_buttons.sass */
@@ -4030,6 +4011,61 @@ input.placeholder {
   width: 100%;
 }
 
+/* line 4, ../sass/_base/_hax.sass */
+.clear {
+  margin-bottom: 0;
+}
+
+/* line 8, ../sass/_base/_hax.sass */
+.panel {
+  background: white;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 5px;
+}
+/* line 4, ../sass/_base/_methods/_utilities.sass */
+.panel:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 12, ../sass/_base/_hax.sass */
+.input-container,
+.display-container {
+  background: white;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 5px;
+  padding: 24px 16px 0;
+  box-sizing: border-box;
+}
+/* line 4, ../sass/_base/_methods/_utilities.sass */
+.input-container:after,
+.display-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 17, ../sass/_base/_hax.sass */
+.input-container > h3,
+.input-container .display-container-content > h3,
+.display-container > h3,
+.display-container .display-container-content > h3 {
+  -webkit-font-smoothing: antialiased;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: white;
+  line-height: 32px;
+  padding-left: 16px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: -24px;
+  margin-bottom: 16px;
+  margin-left: -16px;
+  padding: 0 16px;
+  width: 100%;
+}
+
 /* line 5, ../sass/_widgets/_breadcrumb.sass */
 .content .breadcrumb {
   display: block;
@@ -4260,11 +4296,6 @@ input.placeholder {
   /* line 32, ../sass/_widgets/_summary-aside-toggle.sass */
   .summary-aside-mobile-toggle {
     display: block;
-  }
-
-  /* line 34, ../sass/_widgets/_summary-aside-toggle.sass */
-  .summary-aside {
-    display: none;
   }
 }
 /* line 3, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
@@ -5006,6 +5037,7 @@ input.placeholder {
   max-width: 600px;
   width: 95%;
   margin: 0 auto 24px;
+  padding: 0;
 }
 /* line 4, ../sass/_base/_methods/_utilities.sass */
 .payment-details:after {
@@ -5031,7 +5063,7 @@ input.placeholder {
   display: table;
   clear: both;
 }
-/* line 10, ../sass/_widgets/_payment-panel.sass */
+/* line 11, ../sass/_widgets/_payment-panel.sass */
 .payment-details .thawte,
 .payment-details .card-types label,
 .payment-details .card-types span,
@@ -5043,12 +5075,12 @@ input.placeholder {
 .payment-details .cc-verification .amex {
   display: none;
 }
-/* line 20, ../sass/_widgets/_payment-panel.sass */
+/* line 21, ../sass/_widgets/_payment-panel.sass */
 .payment-details .display-container-content,
 .payment-details .credit-card-editor-wrapper {
   margin-bottom: 0;
 }
-/* line 23, ../sass/_widgets/_payment-panel.sass */
+/* line 24, ../sass/_widgets/_payment-panel.sass */
 .payment-details h3 {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -5061,6 +5093,8 @@ input.placeholder {
   font-size: 14px;
   padding: 12px 0 12px 60px;
   color: #004594;
+  margin-bottom: 24px;
+  line-height: 20px;
 }
 /* line 17, ../sass/_base/_methods/_styles.sass */
 .payment-details h3:after {
@@ -5071,13 +5105,13 @@ input.placeholder {
   left: 0;
   top: 0;
 }
-/* line 33, ../sass/_widgets/_payment-panel.sass */
+/* line 36, ../sass/_widgets/_payment-panel.sass */
 .payment-details h3:after {
   font-size: 36px;
   top: 24px;
   left: 16px;
 }
-/* line 37, ../sass/_widgets/_payment-panel.sass */
+/* line 40, ../sass/_widgets/_payment-panel.sass */
 .payment-details h3 span {
   float: none;
   display: block;
@@ -5086,18 +5120,18 @@ input.placeholder {
   line-height: 16px;
   letter-spacing: -0.2px;
 }
-/* line 44, ../sass/_widgets/_payment-panel.sass */
+/* line 47, ../sass/_widgets/_payment-panel.sass */
 .payment-details fieldset {
   position: relative;
   margin: 0 16px;
 }
-/* line 49, ../sass/_widgets/_payment-panel.sass */
+/* line 52, ../sass/_widgets/_payment-panel.sass */
 .payment-details .card-types {
   position: absolute;
   top: 0;
   right: 0;
 }
-/* line 53, ../sass/_widgets/_payment-panel.sass */
+/* line 56, ../sass/_widgets/_payment-panel.sass */
 .payment-details .card-types:after {
   content: "";
   background: url("/Content/styles/i/cc_logos.png");
@@ -5105,28 +5139,28 @@ input.placeholder {
   height: 31px;
   display: block;
 }
-/* line 59, ../sass/_widgets/_payment-panel.sass */
+/* line 62, ../sass/_widgets/_payment-panel.sass */
 .payment-details .cc-name, .payment-details .cc-number, .payment-details .cc-expiry {
   clear: left;
 }
-/* line 64, ../sass/_widgets/_payment-panel.sass */
+/* line 67, ../sass/_widgets/_payment-panel.sass */
 .payment-details .cc-verification {
   position: relative;
   clear: left;
   padding-right: 155px;
 }
-/* line 68, ../sass/_widgets/_payment-panel.sass */
+/* line 71, ../sass/_widgets/_payment-panel.sass */
 .payment-details .cc-verification label:after {
   content: " (CVC/CCV)";
 }
-/* line 70, ../sass/_widgets/_payment-panel.sass */
+/* line 73, ../sass/_widgets/_payment-panel.sass */
 .payment-details .cc-verification .hint {
   position: absolute;
   bottom: 3px;
   right: 0;
   margin-bottom: 0;
 }
-/* line 75, ../sass/_widgets/_payment-panel.sass */
+/* line 78, ../sass/_widgets/_payment-panel.sass */
 .payment-details .cc-verification .hint:after {
   content: "";
   width: 139px;
@@ -5134,38 +5168,38 @@ input.placeholder {
   background: url("/Content/styles/i/cc_cvc.png");
   display: block;
 }
-/* line 81, ../sass/_widgets/_payment-panel.sass */
+/* line 84, ../sass/_widgets/_payment-panel.sass */
 .payment-details .buy-now {
   float: right;
   margin: 0 16px 24px 0;
 }
-/* line 84, ../sass/_widgets/_payment-panel.sass */
+/* line 87, ../sass/_widgets/_payment-panel.sass */
 .payment-details .buy-now span {
   display: none;
 }
 @media all and (max-width: 640px) {
-  /* line 87, ../sass/_widgets/_payment-panel.sass */
+  /* line 90, ../sass/_widgets/_payment-panel.sass */
   .payment-details .card-types {
     top: -16px;
   }
-  /* line 89, ../sass/_widgets/_payment-panel.sass */
+  /* line 92, ../sass/_widgets/_payment-panel.sass */
   .payment-details .card-types:after {
     width: 110px;
     height: 20.66667px;
     background-size: 100% 100%;
     transform: rotate(0.0001deg);
   }
-  /* line 94, ../sass/_widgets/_payment-panel.sass */
+  /* line 97, ../sass/_widgets/_payment-panel.sass */
   .payment-details .cc-verification {
     padding-right: 0;
     min-width: 190px;
   }
-  /* line 97, ../sass/_widgets/_payment-panel.sass */
+  /* line 100, ../sass/_widgets/_payment-panel.sass */
   .payment-details .cc-verification .hint {
     bottom: 8px;
     right: 8px;
   }
-  /* line 100, ../sass/_widgets/_payment-panel.sass */
+  /* line 103, ../sass/_widgets/_payment-panel.sass */
   .payment-details .cc-verification .hint:after {
     width: 92.66667px;
     height: 28.66667px;
@@ -5601,27 +5635,97 @@ body#policy-details .address-details .input-group.postcode {
 
 /* line 6, ../sass/_pages/_payment.sass */
 body#payment .trip-summary {
-  width: 73%;
+  width: 72%;
   float: left;
 }
 /* line 9, ../sass/_pages/_payment.sass */
 body#payment .quote-summary-actions-wrapper {
   width: 25%;
   float: right;
+  margin-bottom: 0;
 }
-/* line 12, ../sass/_pages/_payment.sass */
+/* line 13, ../sass/_pages/_payment.sass */
 body#payment .quote-summary-actions-wrapper .input-group {
   width: 100%;
   float: left;
   margin-right: 0;
 }
 @media all and (max-width: 640px) {
-  /* line 14, ../sass/_pages/_payment.sass */
+  /* line 15, ../sass/_pages/_payment.sass */
   body#payment .payment-leftside-button {
     display: none;
   }
 }
-/* line 16, ../sass/_pages/_payment.sass */
+/* line 17, ../sass/_pages/_payment.sass */
 body#payment .payment-leftside-button .input-group:first-child {
   display: none;
+}
+/* line 19, ../sass/_pages/_payment.sass */
+body#payment .display-container {
+  width: 72%;
+  clear: left;
+}
+/* line 22, ../sass/_pages/_payment.sass */
+body#payment .display-container.payment-panel {
+  display: none;
+}
+/* line 24, ../sass/_pages/_payment.sass */
+body#payment .display-container.traveller-panel {
+  position: relative;
+}
+/* line 26, ../sass/_pages/_payment.sass */
+body#payment .display-container.traveller-panel .actions {
+  background: none;
+  outline: none;
+  border: none;
+  font-family: Nunito;
+  color: #004594;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 11px;
+  position: absolute;
+  top: 6px;
+  right: 9px;
+}
+/* line 11, ../sass/_base/_methods/_styles.sass */
+body#payment .display-container.traveller-panel .actions:hover {
+  cursor: pointer;
+}
+/* line 32, ../sass/_pages/_payment.sass */
+body#payment .display-container.traveller-panel dl {
+  float: left;
+  width: 31%;
+  margin-right: 2%;
+}
+/* line 36, ../sass/_pages/_payment.sass */
+body#payment .display-container.traveller-panel .mobile {
+  width: 30%;
+}
+/* line 38, ../sass/_pages/_payment.sass */
+body#payment .display-container.traveller-panel .address {
+  width: 46%;
+  margin-right: 0;
+}
+@media all and (max-width: 640px) {
+  /* line 42, ../sass/_pages/_payment.sass */
+  body#payment .trip-summary,
+  body#payment .quote-summary-actions-wrapper,
+  body#payment .display-container {
+    width: 100%;
+    clear: both;
+  }
+  /* line 48, ../sass/_pages/_payment.sass */
+  body#payment .display-container.traveller-panel .insured-travellers, body#payment .display-container.traveller-panel .email {
+    width: 68%;
+    margin-right: 2%;
+  }
+  /* line 51, ../sass/_pages/_payment.sass */
+  body#payment .display-container.traveller-panel .ages, body#payment .display-container.traveller-panel .mobile {
+    width: 30%;
+    margin-right: 0;
+  }
+  /* line 54, ../sass/_pages/_payment.sass */
+  body#payment .display-container.traveller-panel .address {
+    width: 100%;
+  }
 }

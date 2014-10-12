@@ -6,8 +6,16 @@ $(function() {
     $summaryAside,
     $summaryAsideMobileToggle;
 
-    $summaryAsideMobileToggle = $(".summary-aside-mobile-toggle");
+    // Normal page selector.
     $summaryAside = $(".summary-aside");
+    // Payment Page selector.
+    if ($summaryAside.length == 0) {
+      $summaryAside = $(".trip-summary, .quote-summary-actions-wrapper, .display-container.traveller-panel");
+    }
+
+    $summaryAside.hide();
+
+    $summaryAsideMobileToggle = $(".summary-aside-mobile-toggle");
 
     $summaryAsideMobileToggle.on("click", function() {
       if ($summaryAside.is(":visible")) {

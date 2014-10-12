@@ -1,0 +1,19 @@
+// _hax.sass
+
+// Funkiness to account for markup.
+.clear
+  margin-bottom: 0
+
+// Funkiness to account for markup.
+.panel
+  +standard-container-without-header-styles
+
+// Funkiness to account for markup.
+.input-container,
+.display-container
+  +standard-container-without-header-styles
+  padding: $blh $gutter 0
+  box-sizing: border-box
+  > h3,
+  .display-container-content > h3
+    +input-container-h3-hax

@@ -1,12 +1,24 @@
 // _layout.sass
 
 .content-wrapper
-  background: url('/Content/styles/i/hero_background_1.jpg')
-  background-size: cover
+  // Background with graidnet.
+  //
+  // Fallback for no gradients.
+  background: $background-gradient-top
+  background-image: url('/Content/styles/i/hero_background_1.jpg')
+  // Image plus gradient
+  background-image: url('/Content/styles/i/hero_background_1.jpg'), linear-gradient($background-gradient-top, $background-gradient-bottom)
+  // On mobile act differently
+  @media all and (max-width: $mq-mobile-landscape)
+    background-image: none
+
+  background-size: contain
   background-position: center top
+  background-repeat: no-repeat
   min-height: 600px
   margin-bottom: 0
   padding-bottom: $blh
+  ba
 
 .content-wrapper .content
   +layout-box

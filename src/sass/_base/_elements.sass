@@ -38,18 +38,14 @@ dl
     clear: left
     float: left
 
-// Funkiness to account for markup.
-.clear
-  margin-bottom: 0
-
-// Funkiness to account for markup.
-.panel
-  +standard-container-without-header-styles
-
-// Funkiness to account for markup.
-.input-container
-  +standard-container-without-header-styles
-  padding: $blh $gutter 0
-  box-sizing: border-box
-  > h3
-    +input-container-h3-hax
+table
+  width: 100%
+  margin-bottom: $blh
+  tr
+    border-bottom: 1px solid $border-color-medium
+  th
+    font-weight: bold
+  th, td
+    padding-right: $gutter
+    &:last-child
+      padding-right: 0
