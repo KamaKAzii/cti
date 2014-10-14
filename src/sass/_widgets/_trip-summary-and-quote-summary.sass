@@ -1,8 +1,12 @@
 // _trip-summary-and-quote-summary.sass
 
+// TODO: Fix markup so +standard-container
+// can be used directly
 .trip-summary,
 .quote-summary
-  +standard-container
+  +standard-container-without-header-styles
+  h4
+    +content-header-title
   position: relative
   .trip-summary-content, .quote-summary-content
     +clearfix

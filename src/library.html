@@ -84,7 +84,7 @@
 </div>
 
 
-<h1><span>Tell us your</span> CSS Library</h1>
+<h1><span>This is your</span> CSS Library</h1>
 
 <div class="modal-whitewash"></div>
 <div class="modal-content email-quote">
@@ -124,13 +124,18 @@
 </div>
 
 <script>
-
   $(function () {
     var
+      $initialInMarkupValidation,
+      $initialInputGroupsWithValidation,
       toggleValidationState,
       addValidationToInput,
       createValidationUl,
       toggleModalState;
+
+    // Hide validation which is in the page.
+    $initialInMarkupValidation = $(".input-validation-errors").hide();
+    $initialInputGroupsWithValidation = $(".input-group.error").removeClass("error");
 
     $(".control-panel--dev .toggle-validation").on("click", function(e) {
       toggleValidationState();
@@ -143,6 +148,10 @@
     });
 
     toggleValidationState = function() {
+      // Generic validation.
+      $initialInMarkupValidation.toggle();
+      $initialInputGroupsWithValidation.toggleClass("error");
+  
       // QQC - Ages
       var $qqcAgesInputGroup = $(".qqc-field.ages .input-group");
       addValidationDirectlyToInput($qqcAgesInputGroup);
@@ -182,6 +191,99 @@
   });
 
 </script>
+
+<div class="standard-container">
+  <h3>Form Styles</h3>
+  <div class="input-group">
+    <label>Name</label>
+    <input type="text" placeholder="John Appleseed" />
+  </div>
+  <div class="input-group">
+    <label>What's your flava?</label>
+    <input type="text" placeholder="Vanilla Choc" />
+  </div>
+  <div class="input-group">
+    <label>Street Name</label>
+    <input type="text" placeholder="Awesome Street" />
+  </div>
+  <div class="input-group">
+    <label>Preferred Tea</label>
+    <input type="text" placeholder="Green" />
+  </div>
+  <div class="input-group error">
+    <label>Headphone Choice</label>
+    <input type="text" placeholder="Stockholm blend" />
+  </div>
+  <div class="input-group error">
+    <label>Adventure time?</label>
+    <input type="text" placeholder="Definitely" />
+  </div>
+  <div class="input-group half-width">
+    <label>I am half width</label>
+    <input type="text" placeholder="Yep I am" />
+  </div>
+  <div class="input-group half-width">
+    <label>I am half width</label>
+    <input type="text" placeholder="Yep I am" />
+  </div>
+
+  <ul class="input-validation-errors">
+    <li>What kind of headphones do you like?</li>
+    <li>Adventures are always good. Please pick one.</li>
+  </ul>
+
+  <div class="input-group checkbox">
+    <label for="checkbox2">I am a checkbox</label>
+    <input type="checkbox" id="checkbox2" />
+  </div>
+  <div class="input-group checkbox">
+    <label for="checkbox1">This is a sample chcekbox label which is long like a Terms and Conditions checkbox label. I agree to receive all policy documents electronically and have read, understood &amp; agree to the conditions in the Policy Wording.</label>
+    <input type="checkbox" id="checkbox1" />
+  </div>
+  <div class="input-group checkbox half-width">
+    <label for="checkbox3">This is a sample chcekbox which is half width and still has a pretty big label. See? It's pretty big isnt it...</label>
+    <input type="checkbox" id="checkbox3" />
+  </div>
+  <div class="input-group checkbox half-width">
+    <label for="checkbox4">This is a sample chcekbox which is half width and sits next to the other guy over yonder.</label>
+    <input type="checkbox" id="checkbox4" />
+  </div>
+
+  <ul class="input-validation-errors">
+    <li>This is an error and it's bananas.</li>
+    <li>You are too old.</li>
+  </ul>
+
+  <div class="input-group radio error clear-left">
+    <label for="radio1">I am a radio. Also, notice I clear myself with the clear class. My label is long and super cool.</label>
+    <input type="radio" name="radios" id="radio1" />
+  </div>
+  <div class="input-group radio half-width">
+    <label for="radio2"> Half widths are probably good for when radio labels are long but not SO LONG that the label is too thin and spread out (like the guy above).</label>
+    <input type="radio" name="radios" id="radio2" />
+  </div>
+  <ul class="input-validation-errors">
+    <li>This is an error and it's bananas.</li>
+    <li>You are too old.</li>
+  </ul>
+</div>
+
+<div class="standard-container">
+  <h3>This is a container</h3>
+  <p>A container can be extended with the mixin +standard-container.</p>
+  <p>It typically has a H3 or H4 as the first child for the header bit.</p>
+</div>
+
+<div class="standard-container">
+  <h3>Typography</h3>
+  <h1>Header which is a H1</h1>
+  <h2>Header which is a H2</h2>
+  <h3>Header which is a H3</h3>
+  <h4>Header which is a H4</h4>
+  <h5>Header which is a H5</h5>
+  <p>This is content which goes inside a paragraph tag.</p>
+  <p>This is a paragraph tag which follows the previous paragraph tag. It is merely to show how they sit against one another. It is also good to see a paragraph tag which has a line wrap... just because.</p>
+</div>
 
 <div class="summary-aside-mobile-toggle">Tap to expand trip details</div>
 <div class="summary-aside">
@@ -238,66 +340,6 @@
     </div>
   </div>
 
-</div>
-
-<div class="standard-container">
-  <h3>Form Styles</h3>
-  <div class="input-group">
-    <label>Name</label>
-    <input type="text" placeholder="John Appleseed" />
-  </div>
-  <div class="input-group">
-    <label>What's your flava?</label>
-    <input type="text" placeholder="Vanilla Choc" />
-  </div>
-  <div class="input-group">
-    <label>Street Name</label>
-    <input type="text" placeholder="Awesome Street" />
-  </div>
-  <div class="input-group">
-    <label>Preferred Tea</label>
-    <input type="text" placeholder="Green" />
-  </div>
-  <div class="input-group">
-    <label>Headphone Choice</label>
-    <input type="text" placeholder="Stockholm blend" />
-  </div>
-  <div class="input-group">
-    <label>Adventure time?</label>
-    <input type="text" placeholder="Definitely" />
-  </div>
-  <div class="input-group half-width">
-    <label>I am half width</label>
-    <input type="text" placeholder="Yep I am" />
-  </div>
-  <div class="input-group half-width">
-    <label>I am half width</label>
-    <input type="text" placeholder="Yep I am" />
-  </div>
-  <div class="input-group checkbox">
-    <label for="checkbox2">I am a checkbox</label>
-    <input type="checkbox" id="checkbox2" />
-  </div>
-  <div class="input-group checkbox">
-    <label for="checkbox1">This is a sample chcekbox label which is long like a Terms and Conditions checkbox label. I agree to receive all policy documents electronically and have read, understood &amp; agree to the conditions in the Policy Wording.</label>
-    <input type="checkbox" id="checkbox1" />
-  </div>
-  <div class="input-group checkbox half-width">
-    <label for="checkbox3">This is a sample chcekbox which is half width and still has a pretty big label. See? It's pretty big isnt it...</label>
-    <input type="checkbox" id="checkbox3" />
-  </div>
-  <div class="input-group checkbox half-width">
-    <label for="checkbox4">This is a sample chcekbox which is half width and sits next to the other guy over yonder.</label>
-    <input type="checkbox" id="checkbox4" />
-  </div>
-  <div class="input-group radio clear-left">
-    <label for="radio1">I am a radio. Also, notice I clear myself with the clear class. My label is long and super cool.</label>
-    <input type="radio" name="radios" id="radio1" />
-  </div>
-  <div class="input-group radio half-width">
-    <label for="radio2"> Half widths are probably good for when radio labels are long but not SO LONG that the label is too thin and spread out (like the guy above).</label>
-    <input type="radio" name="radios" id="radio2" />
-  </div>
 </div>
 
 <form action="/Home/MultiTarget" id="qqc-form" method="post">      <div id="quote-session-tokens">

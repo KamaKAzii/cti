@@ -3160,7 +3160,7 @@ select {
     display: none;
   }
 }
-/* line 50, ../sass/_base/_methods/_components.sass */
+/* line 52, ../sass/_base/_methods/_components.sass */
 .standard-container {
   background: white;
   background: rgba(255, 255, 255, 0.85);
@@ -3173,8 +3173,9 @@ select {
   display: table;
   clear: both;
 }
-/* line 7, ../sass/_base/_methods/_components.sass */
-.standard-container h3, .standard-container h4 {
+/* line 8, ../sass/_base/_methods/_components.sass */
+.standard-container > h3:first-child,
+.standard-container > h4:first-child {
   -webkit-font-smoothing: antialiased;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -3185,15 +3186,22 @@ select {
   font-size: 14px;
   text-transform: uppercase;
 }
+/* line 56, ../sass/_base/_methods/_components.sass */
+.standard-container > p, .standard-container > h1, .standard-container > h2, .standard-container > h3, .standard-container > h4, .standard-container > h5 {
+  box-sizing: border-box;
+  padding-right: 16px;
+}
 @media all and (max-width: 640px) {
-  /* line 54, ../sass/_base/_methods/_components.sass */
+  /* line 60, ../sass/_base/_methods/_components.sass */
   .standard-container > * {
     box-sizing: border-box;
     padding-right: 16px;
   }
 }
-/* line 57, ../sass/_base/_methods/_components.sass */
-.standard-container > h2, .standard-container > h3, .standard-container > h4 {
+/* line 63, ../sass/_base/_methods/_components.sass */
+.standard-container > h2:first-child,
+.standard-container > h3:first-child,
+.standard-container > h4:first-child {
   -webkit-font-smoothing: antialiased;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -3447,13 +3455,43 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Nunito;
 }
 
-/* line 15, ../sass/_base/_elements.sass */
+/* line 14, ../sass/_base/_elements.sass */
+h1 {
+  font-size: 36px;
+  line-height: 40px;
+}
+
+/* line 17, ../sass/_base/_elements.sass */
+h2 {
+  font-size: 34px;
+  line-height: 34px;
+}
+
+/* line 20, ../sass/_base/_elements.sass */
+h3 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+/* line 23, ../sass/_base/_elements.sass */
+h4 {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+/* line 26, ../sass/_base/_elements.sass */
+h5 {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/* line 30, ../sass/_base/_elements.sass */
 a {
   color: #004594;
 }
 
-/* line 19, ../sass/_base/_elements.sass */
-h1,
+/* line 34, ../sass/_base/_elements.sass */
+.content > h1,
 .content > h2 {
   font-size: 30px;
   line-height: 34px;
@@ -3464,7 +3502,7 @@ h1,
   text-align: center;
 }
 /* line 33, ../sass/_base/_methods/_styles.sass */
-h1 span,
+.content > h1 span,
 .content > h2 span {
   color: white;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.35);
@@ -3476,35 +3514,35 @@ dl:after {
   display: table;
   clear: both;
 }
-/* line 25, ../sass/_base/_elements.sass */
+/* line 40, ../sass/_base/_elements.sass */
 dl dt {
   float: left;
   font-weight: bold;
 }
-/* line 28, ../sass/_base/_elements.sass */
+/* line 43, ../sass/_base/_elements.sass */
 dl dd {
   clear: left;
   float: left;
 }
 
-/* line 32, ../sass/_base/_elements.sass */
+/* line 47, ../sass/_base/_elements.sass */
 table {
   width: 100%;
   margin-bottom: 24px;
 }
-/* line 35, ../sass/_base/_elements.sass */
+/* line 50, ../sass/_base/_elements.sass */
 table tr {
   border-bottom: 1px solid #f6f6f6;
 }
-/* line 37, ../sass/_base/_elements.sass */
+/* line 52, ../sass/_base/_elements.sass */
 table th {
   font-weight: bold;
 }
-/* line 39, ../sass/_base/_elements.sass */
+/* line 54, ../sass/_base/_elements.sass */
 table th, table td {
   padding-right: 16px;
 }
-/* line 41, ../sass/_base/_elements.sass */
+/* line 56, ../sass/_base/_elements.sass */
 table th:last-child, table td:last-child {
   padding-right: 0;
 }
@@ -3714,9 +3752,15 @@ form:after {
 /* line 6, ../sass/_base/_forms.sass */
 .input-group {
   min-height: 64px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
-/* line 9, ../sass/_base/_forms.sass */
+@media all and (max-width: 640px) {
+  /* line 6, ../sass/_base/_forms.sass */
+  .input-group {
+    margin-bottom: 12px;
+  }
+}
+/* line 11, ../sass/_base/_forms.sass */
 .input-group label {
   display: block;
   font-size: 12px;
@@ -3725,20 +3769,20 @@ form:after {
   font-family: Nunito;
   text-transform: uppercase;
 }
-/* line 16, ../sass/_base/_forms.sass */
+/* line 18, ../sass/_base/_forms.sass */
 .input-group button, .input-group input {
   width: 100%;
 }
-/* line 19, ../sass/_base/_forms.sass */
+/* line 21, ../sass/_base/_forms.sass */
 .input-group.clear-left {
   clear: left;
 }
-/* line 21, ../sass/_base/_forms.sass */
+/* line 23, ../sass/_base/_forms.sass */
 .input-group.clear-right {
   clear: right;
 }
 
-/* line 24, ../sass/_base/_forms.sass */
+/* line 26, ../sass/_base/_forms.sass */
 input[type='text'],
 input[type='password'],
 input[type='email'],
@@ -3750,7 +3794,7 @@ input[type='number'] {
   font-size: 14px;
   color: #303030;
 }
-/* line 34, ../sass/_base/_forms.sass */
+/* line 36, ../sass/_base/_forms.sass */
 input[type='text']:focus,
 input[type='password']:focus,
 input[type='email']:focus,
@@ -3758,28 +3802,93 @@ input[type='number']:focus {
   border-color: #179df2;
 }
 
-/* line 38, ../sass/_base/_forms.sass */
+/* line 40, ../sass/_base/_forms.sass */
 input.placeholder {
   color: #9daec0 !important;
 }
 
-/* line 40, ../sass/_base/_forms.sass */
+/* line 42, ../sass/_base/_forms.sass */
 ::-webkit-input-placeholder {
   color: #9daec0 !important;
 }
 
-/* line 42, ../sass/_base/_forms.sass */
+/* line 44, ../sass/_base/_forms.sass */
 ::-moz-placeholder {
   color: #9daec0 !important;
 }
 
-/* line 45, ../sass/_base/_forms.sass */
+/* line 48, ../sass/_base/_forms.sass */
+.input-group.checkbox,
+.input-group.radio {
+  position: relative;
+  min-height: initial;
+  min-height: auto;
+}
+/* line 53, ../sass/_base/_forms.sass */
+.input-group.checkbox label,
+.input-group.radio label {
+  float: left;
+  width: auto;
+  display: block;
+  padding-left: 40px;
+  padding-right: 16px;
+  margin-bottom: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: none;
+}
+/* line 64, ../sass/_base/_forms.sass */
+.input-group.checkbox input[type="checkbox"],
+.input-group.checkbox input[type="radio"],
+.input-group.radio input[type="checkbox"],
+.input-group.radio input[type="radio"] {
+  position: absolute;
+  left: 0;
+  top: -3px;
+  width: auto;
+}
+/* line 70, ../sass/_base/_forms.sass */
+.input-group.checkbox.half-width, .payment-details .input-group.checkbox.cc-name, .payment-details .input-group.checkbox.cc-number, .payment-details .input-group.checkbox.cc-expiry,
+.input-group.radio.half-width,
+.payment-details .input-group.radio.cc-name,
+.payment-details .input-group.radio.cc-number,
+.payment-details .input-group.radio.cc-expiry {
+  width: 48%;
+  margin-right: 2%;
+}
+@media all and (max-width: 640px) {
+  /* line 70, ../sass/_base/_forms.sass */
+  .input-group.checkbox.half-width, .payment-details .input-group.checkbox.cc-name, .payment-details .input-group.checkbox.cc-number, .payment-details .input-group.checkbox.cc-expiry,
+  .input-group.radio.half-width,
+  .payment-details .input-group.radio.cc-name,
+  .payment-details .input-group.radio.cc-number,
+  .payment-details .input-group.radio.cc-expiry {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* line 78, ../sass/_base/_forms.sass */
+.input-group.error label {
+  color: #d60000;
+}
+/* line 80, ../sass/_base/_forms.sass */
+.input-group.error input[type="text"],
+.input-group.error input[type="password"],
+.input-group.error input[type="email"],
+.input-group.error input[type="number"] {
+  border: 1px solid #d60000;
+}
+
+/* line 86, ../sass/_base/_forms.sass */
 .input-validation-errors {
   position: relative;
   position: relative;
   padding-left: 36px;
   margin-left: 0;
-  padding-left: 30px;
+  padding-left: 40px;
+  clear: both;
 }
 /* line 17, ../sass/_base/_methods/_styles.sass */
 .input-validation-errors:after {
@@ -3790,7 +3899,7 @@ input.placeholder {
   left: 0;
   top: 0;
 }
-/* line 50, ../sass/_base/_forms.sass */
+/* line 92, ../sass/_base/_forms.sass */
 .input-validation-errors:after {
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
@@ -3799,60 +3908,11 @@ input.placeholder {
   padding: 0px 5px;
   border-radius: 10px;
 }
-/* line 57, ../sass/_base/_forms.sass */
+/* line 99, ../sass/_base/_forms.sass */
 .input-validation-errors li {
-  list-style-type: none;
-  margin-bottom: 12px;
-}
-
-/* line 62, ../sass/_base/_forms.sass */
-.input-group.checkbox,
-.input-group.radio {
-  position: relative;
-  min-height: initial;
-  min-height: auto;
-}
-/* line 67, ../sass/_base/_forms.sass */
-.input-group.checkbox label,
-.input-group.radio label {
   -webkit-font-smoothing: antialiased;
-  float: left;
-  width: auto;
-  display: block;
-  padding-left: 40px;
-  padding-right: 16px;
-  margin-bottom: 0;
-  font-family: Helvetica, Arial, sans-serif;
-}
-/* line 76, ../sass/_base/_forms.sass */
-.input-group.checkbox input[type="checkbox"],
-.input-group.checkbox input[type="radio"],
-.input-group.radio input[type="checkbox"],
-.input-group.radio input[type="radio"] {
-  position: absolute;
-  left: 0;
-  top: -3px;
-  width: auto;
-}
-/* line 82, ../sass/_base/_forms.sass */
-.input-group.checkbox.half-width, .payment-details .input-group.checkbox.cc-name, .payment-details .input-group.checkbox.cc-number, .payment-details .input-group.checkbox.cc-expiry,
-.input-group.radio.half-width,
-.payment-details .input-group.radio.cc-name,
-.payment-details .input-group.radio.cc-number,
-.payment-details .input-group.radio.cc-expiry {
-  width: 48%;
-  margin-right: 2%;
-}
-@media all and (max-width: 640px) {
-  /* line 82, ../sass/_base/_forms.sass */
-  .input-group.checkbox.half-width, .payment-details .input-group.checkbox.cc-name, .payment-details .input-group.checkbox.cc-number, .payment-details .input-group.checkbox.cc-expiry,
-  .input-group.radio.half-width,
-  .payment-details .input-group.radio.cc-name,
-  .payment-details .input-group.radio.cc-number,
-  .payment-details .input-group.radio.cc-expiry {
-    width: 100%;
-    margin-right: 0;
-  }
+  list-style-type: none;
+  font-weight: normal;
 }
 
 /* line 3, ../sass/_base/_footer.sass */
@@ -3934,11 +3994,11 @@ input.placeholder {
   width: 40%;
   max-width: 305px;
 }
-/* line 24, ../sass/_base/_methods/_components.sass */
+/* line 26, ../sass/_base/_methods/_components.sass */
 .footer .recommended > *:last-child {
   margin-bottom: 0;
 }
-/* line 26, ../sass/_base/_methods/_components.sass */
+/* line 28, ../sass/_base/_methods/_components.sass */
 .footer .recommended h2, .footer .recommended h3, .footer .recommended h4, .footer .recommended h5 {
   -webkit-font-smoothing: antialiased;
   position: relative;
@@ -4012,8 +4072,9 @@ input.placeholder {
   display: table;
   clear: both;
 }
-/* line 7, ../sass/_base/_methods/_components.sass */
-.modal-content h3, .modal-content h4 {
+/* line 8, ../sass/_base/_methods/_components.sass */
+.modal-content > h3:first-child,
+.modal-content > h4:first-child {
   -webkit-font-smoothing: antialiased;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -4104,9 +4165,9 @@ input.placeholder {
   clear: both;
 }
 /* line 17, ../sass/_base/_hax.sass */
-.input-container > h3,
+.input-container > h3:first-child,
 .input-container .display-container-content > h3,
-.display-container > h3,
+.display-container > h3:first-child,
 .display-container .display-container-content > h3 {
   -webkit-font-smoothing: antialiased;
   border-top-left-radius: 5px;
@@ -4356,7 +4417,7 @@ input.placeholder {
     display: block;
   }
 }
-/* line 3, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 5, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .trip-summary,
 .quote-summary {
   background: white;
@@ -4371,9 +4432,8 @@ input.placeholder {
   display: table;
   clear: both;
 }
-/* line 7, ../sass/_base/_methods/_components.sass */
-.trip-summary h3, .trip-summary h4,
-.quote-summary h3,
+/* line 8, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+.trip-summary h4,
 .quote-summary h4 {
   -webkit-font-smoothing: antialiased;
   border-top-left-radius: 5px;
@@ -4385,7 +4445,7 @@ input.placeholder {
   font-size: 14px;
   text-transform: uppercase;
 }
-/* line 7, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 11, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .trip-summary .trip-summary-content, .trip-summary .quote-summary-content,
 .quote-summary .trip-summary-content,
 .quote-summary .quote-summary-content {
@@ -4399,7 +4459,7 @@ input.placeholder {
   display: table;
   clear: both;
 }
-/* line 10, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 14, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .trip-summary .edit,
 .quote-summary .edit {
   background: none;
@@ -4418,57 +4478,57 @@ input.placeholder {
 .quote-summary .edit:hover {
   cursor: pointer;
 }
-/* line 15, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 19, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .trip-summary dl,
 .quote-summary dl {
   float: left;
   margin-right: 16px;
 }
-/* line 18, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 22, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .trip-summary .destinations,
 .quote-summary .destinations {
   width: 31%;
   margin-left: 16px;
 }
-/* line 21, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 25, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .trip-summary .departure-date, .trip-summary .return-date,
 .quote-summary .departure-date,
 .quote-summary .return-date {
   width: 19%;
 }
-/* line 23, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 27, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .trip-summary .ages,
 .quote-summary .ages {
   float: right;
   width: 12%;
 }
 @media all and (max-width: 640px) {
-  /* line 27, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+  /* line 31, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
   .trip-summary .destinations,
   .quote-summary .destinations {
     width: 90%;
   }
-  /* line 29, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+  /* line 33, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
   .trip-summary .departure-date,
   .quote-summary .departure-date {
     clear: left;
     margin-left: 16px;
   }
-  /* line 32, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+  /* line 36, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
   .trip-summary .departure-date, .trip-summary .return-date, .trip-summary .ages,
   .quote-summary .departure-date,
   .quote-summary .return-date,
   .quote-summary .ages {
     width: 32%;
   }
-  /* line 34, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+  /* line 38, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
   .trip-summary .ages,
   .quote-summary .ages {
     width: 14%;
   }
 }
 
-/* line 37, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 41, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .summary-aside {
   margin-bottom: 0;
 }
@@ -4478,48 +4538,48 @@ input.placeholder {
   display: table;
   clear: both;
 }
-/* line 40, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 44, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .summary-aside .trip-summary {
   float: left;
   width: 73%;
 }
-/* line 43, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 47, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .summary-aside .quote-summary {
   float: right;
   width: 25%;
 }
 @media all and (max-width: 640px) {
-  /* line 47, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+  /* line 51, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
   .summary-aside .trip-summary, .summary-aside .quote-summary {
     width: 100%;
   }
 }
 
-/* line 50, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 54, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .quote-summary {
   position: relative;
 }
-/* line 52, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 56, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .quote-summary h4 {
   background: #004594;
   color: white;
 }
-/* line 55, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 59, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .quote-summary dl {
   display: none;
 }
-/* line 57, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 61, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .quote-summary .total-price {
   width: 100%;
   display: block;
   margin-right: 0;
   margin-bottom: 6px;
 }
-/* line 62, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 66, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .quote-summary .total-price dt {
   display: none;
 }
-/* line 64, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 68, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .quote-summary .total-price dd {
   -webkit-font-smoothing: antialiased;
   font-family: Nunito;
@@ -4535,13 +4595,13 @@ input.placeholder {
   line-height: 12px;
   vertical-align: super;
 }
-/* line 66, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 70, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .quote-summary .plan-name {
   display: block;
   margin-left: 16px;
   margin-bottom: 12px;
 }
-/* line 70, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
+/* line 74, ../sass/_widgets/_trip-summary-and-quote-summary.sass */
 .quote-summary .plan-name dt, .quote-summary .plan-name dd {
   font-size: 12px;
   line-height: 12px;
@@ -4888,8 +4948,9 @@ input.placeholder {
   display: table;
   clear: both;
 }
-/* line 7, ../sass/_base/_methods/_components.sass */
-.qqc h3, .qqc h4 {
+/* line 8, ../sass/_base/_methods/_components.sass */
+.qqc > h3:first-child,
+.qqc > h4:first-child {
   -webkit-font-smoothing: antialiased;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -4934,33 +4995,41 @@ input.placeholder {
   float: left;
   width: 33%;
 }
-/* line 22, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 23, ../sass/_widgets/_quick-quote-calculator.sass */
+.qqc .qqc-field.where .input-group {
+  margin-bottom: 0;
+}
+/* line 25, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .qqc-field.ages {
   width: 34%;
 }
-/* line 24, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 27, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .qqc-field.ages h5 {
   border-right: none;
 }
-/* line 26, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 29, ../sass/_widgets/_quick-quote-calculator.sass */
+.qqc .qqc-field.ages .input-group {
+  margin-bottom: 0;
+}
+/* line 31, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .qqc-field.ages input[type='text'] {
   clear: none;
   width: 40%;
   margin-right: 16px;
 }
-/* line 30, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 35, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .qqc-field.when {
   margin-bottom: 0;
 }
-/* line 32, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 37, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .qqc-field.when .departure-date {
   margin-top: -16px;
 }
-/* line 34, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 39, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .qqc-field.when .input-group .input-with-icon {
   margin-bottom: 0;
 }
-/* line 36, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 41, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .where h5 {
   border-top-left-radius: 5px;
   position: relative;
@@ -4975,7 +5044,7 @@ input.placeholder {
   left: 0;
   top: 0;
 }
-/* line 39, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 44, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .when h5 {
   position: relative;
   padding-left: 36px;
@@ -4989,7 +5058,7 @@ input.placeholder {
   left: 0;
   top: 0;
 }
-/* line 41, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 46, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .ages h5 {
   border-top-right-radius: 5px;
   position: relative;
@@ -5004,7 +5073,7 @@ input.placeholder {
   left: 0;
   top: 0;
 }
-/* line 44, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 49, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .qqc-field h5 {
   -webkit-font-smoothing: antialiased;
   background: white;
@@ -5016,74 +5085,74 @@ input.placeholder {
   border-right: 1px solid #f8f8f8;
   border-bottom: 1px solid #f8f8f8;
 }
-/* line 54, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 59, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .qqc-field h5:after {
   color: #004594;
   top: 18px;
   left: 18px;
 }
-/* line 58, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 63, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .actions .input-group {
   float: right;
   width: 30%;
   margin-bottom: 0;
 }
-/* line 62, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 67, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .actions .input-group button {
   float: right;
 }
-/* line 64, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 69, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .actions .input-group button span {
   display: none;
 }
-/* line 66, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 71, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .input-validation-errors {
   margin: 0 16px 24px;
 }
 @media all and (max-width: 640px) {
-  /* line 70, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 75, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field,
   .qqc .qqc-field.ages {
     width: 100%;
     margin-bottom: 0;
   }
-  /* line 74, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 79, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field h5,
   .qqc .qqc-field.ages h5 {
     min-height: initial;
     margin-bottom: 12px;
     border: none;
   }
-  /* line 78, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 83, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field h5:after,
   .qqc .qqc-field.ages h5:after {
     top: 10px;
   }
-  /* line 80, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 85, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field.when .departure-date,
   .qqc .qqc-field.ages.when .departure-date {
     margin-top: 0;
   }
-  /* line 82, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 87, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field.where h5,
   .qqc .qqc-field.ages.where h5 {
     border-top-right-radius: 5px;
   }
-  /* line 84, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 89, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field.ages input[type='text'] {
     width: 45%;
   }
-  /* line 86, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 91, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field.ages input[type='text']:last-child {
     float: right;
     margin-right: 0;
   }
-  /* line 90, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 95, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .actions .input-group {
     float: none;
     width: auto;
   }
-  /* line 93, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 98, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .actions button {
     width: 100%;
   }
@@ -5107,8 +5176,9 @@ input.placeholder {
   display: table;
   clear: both;
 }
-/* line 7, ../sass/_base/_methods/_components.sass */
-.payment-details h3, .payment-details h4 {
+/* line 8, ../sass/_base/_methods/_components.sass */
+.payment-details > h3:first-child,
+.payment-details > h4:first-child {
   -webkit-font-smoothing: antialiased;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -5286,8 +5356,9 @@ input.placeholder {
   display: table;
   clear: both;
 }
-/* line 7, ../sass/_base/_methods/_components.sass */
-.uber-menu h3, .uber-menu h4 {
+/* line 8, ../sass/_base/_methods/_components.sass */
+.uber-menu > h3:first-child,
+.uber-menu > h4:first-child {
   -webkit-font-smoothing: antialiased;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -5340,8 +5411,9 @@ input.placeholder {
   display: table;
   clear: both;
 }
-/* line 7, ../sass/_base/_methods/_components.sass */
-.uber-menu .uber-menu-footer h3, .uber-menu .uber-menu-footer h4 {
+/* line 8, ../sass/_base/_methods/_components.sass */
+.uber-menu .uber-menu-footer > h3:first-child,
+.uber-menu .uber-menu-footer > h4:first-child {
   -webkit-font-smoothing: antialiased;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -5447,8 +5519,9 @@ input.placeholder {
   display: table;
   clear: both;
 }
-/* line 7, ../sass/_base/_methods/_components.sass */
-.autocomplete h3, .autocomplete h4 {
+/* line 8, ../sass/_base/_methods/_components.sass */
+.autocomplete > h3:first-child,
+.autocomplete > h4:first-child {
   -webkit-font-smoothing: antialiased;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -5556,8 +5629,9 @@ input.placeholder {
   display: table;
   clear: both;
 }
-/* line 7, ../sass/_base/_methods/_components.sass */
-.datepicker h3, .datepicker h4 {
+/* line 8, ../sass/_base/_methods/_components.sass */
+.datepicker > h3:first-child,
+.datepicker > h4:first-child {
   -webkit-font-smoothing: antialiased;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;

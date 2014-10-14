@@ -11,12 +11,27 @@ body
 
 h1, h2, h3, h4, h5, h6
   font-family: $font-theme
+h1
+  font-size: $font-size-xhuge
+  line-height: $font-size-xhuge + 4px
+h2
+  font-size: $font-size-huge + 4px
+  line-height: $font-size-huge + 4px
+h3
+  font-size: $font-size-xlarge
+  line-height: $font-size-xlarge + 4px
+h4
+  font-size: $font-size-large
+  line-height: $font-size-large + 4px
+h5
+  font-size: $font-size-normal
+  line-height: $font-size-normal + 4px
 
 a
   color: $link-color
 
 // Extra selectors for funky markup.
-h1,
+.content > h1,
 .content > h2
   +main-header
 

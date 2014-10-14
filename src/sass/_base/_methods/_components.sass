@@ -1,10 +1,12 @@
 // _methods/_components.sass
 
+// TODO: Clean up markup to get rid of funkyness.
 =standard-container
   +content-plain-background
   +cti-border-radius
   +clearfix
-  h3, h4
+  > h3:first-child,
+  > h4:first-child
     +content-header-title
 
 =standard-container-without-header-styles
@@ -48,12 +50,18 @@
 
 // For extending and direct use.
 .standard-container
+  // TODO: Use content containers within markup and get rid of weirdness.
   +standard-container
   padding-left: $gutter
+  > p, > h1, > h2, > h3, > h4, > h5
+    box-sizing: border-box
+    padding-right: $gutter
   @media all and (max-width: $mq-mobile-landscape)
     > *
       box-sizing: border-box
       padding-right: $gutter
-  > h2, > h3, > h4
+  > h2:first-child, 
+  > h3:first-child,
+  > h4:first-child
     +content-header-title
     margin-left: -$gutter

@@ -9,13 +9,18 @@
 </div>
 
 <script>
-
   $(function () {
     var
+      $initialInMarkupValidation,
+      $initialInputGroupsWithValidation,
       toggleValidationState,
       addValidationToInput,
       createValidationUl,
       toggleModalState;
+
+    // Hide validation which is in the page.
+    $initialInMarkupValidation = $(".input-validation-errors").hide();
+    $initialInputGroupsWithValidation = $(".input-group.error").removeClass("error");
 
     $(".control-panel--dev .toggle-validation").on("click", function(e) {
       toggleValidationState();
@@ -28,6 +33,10 @@
     });
 
     toggleValidationState = function() {
+      // Generic validation.
+      $initialInMarkupValidation.toggle();
+      $initialInputGroupsWithValidation.toggleClass("error");
+  
       // QQC - Ages
       var $qqcAgesInputGroup = $(".qqc-field.ages .input-group");
       addValidationDirectlyToInput($qqcAgesInputGroup);

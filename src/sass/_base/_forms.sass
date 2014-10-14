@@ -5,7 +5,9 @@ form
 
 .input-group
   min-height: 64px
-  margin-bottom: $blh / 2
+  margin-bottom: $blh
+  @media all and (max-width: $mq-mobile-landscape)
+    margin-bottom: $blh / 2
   label
     display: block
     font-size: $font-size-small
@@ -42,22 +44,6 @@ input.placeholder
 ::-moz-placeholder
   color: $form-placeholder-color !important
 
-.input-validation-errors
-  position: relative
-  +icon-styles("\f9")
-  margin-left: 0
-  padding-left: 30px
-  &:after
-    +font-smoothing
-    font-size: $font-size-normal
-    background: $error-color
-    color: $text-color-inverted
-    padding: 0px 5px
-    border-radius: 10px
-  li
-    list-style-type: none
-    margin-bottom: $blh / 2
-
 // TODO: Check the Common checkbox/radio SASS and refactor this.
 .input-group.checkbox,
 .input-group.radio
@@ -65,7 +51,6 @@ input.placeholder
   min-height: initial
   min-height: auto
   label
-    +font-smoothing
     float: left
     width: auto
     display: block
@@ -73,6 +58,9 @@ input.placeholder
     padding-right: $gutter
     margin-bottom: 0
     font-family: $font-normal
+    font-size: $font-size-normal
+    line-height: $font-size-normal + 4px
+    text-transform: none
   input[type="checkbox"],
   input[type="radio"]
     position: absolute
@@ -85,3 +73,30 @@ input.placeholder
     @media all and (max-width: $mq-mobile-landscape)
       width: 100%
       margin-right: 0
+
+.input-group.error
+  label
+    color: $error-color
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"]
+    border: 1px solid $error-border-color
+
+.input-validation-errors
+  position: relative
+  +icon-styles("\f9")
+  margin-left: 0
+  padding-left: 40px
+  clear: both
+  &:after
+    +font-smoothing
+    font-size: $font-size-normal
+    background: $error-color
+    color: $text-color-inverted
+    padding: 0px 5px
+    border-radius: 10px
+  li
+    +font-smoothing
+    list-style-type: none
+    font-weight: normal

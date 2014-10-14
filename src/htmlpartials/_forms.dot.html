@@ -16,11 +16,11 @@
     <label>Preferred Tea</label>
     <input type="text" placeholder="Green" />
   </div>
-  <div class="input-group">
+  <div class="input-group error">
     <label>Headphone Choice</label>
     <input type="text" placeholder="Stockholm blend" />
   </div>
-  <div class="input-group">
+  <div class="input-group error">
     <label>Adventure time?</label>
     <input type="text" placeholder="Definitely" />
   </div>
@@ -32,6 +32,12 @@
     <label>I am half width</label>
     <input type="text" placeholder="Yep I am" />
   </div>
+
+  <ul class="input-validation-errors">
+    <li>What kind of headphones do you like?</li>
+    <li>Adventures are always good. Please pick one.</li>
+  </ul>
+
   <div class="input-group checkbox">
     <label for="checkbox2">I am a checkbox</label>
     <input type="checkbox" id="checkbox2" />
@@ -48,7 +54,13 @@
     <label for="checkbox4">This is a sample chcekbox which is half width and sits next to the other guy over yonder.</label>
     <input type="checkbox" id="checkbox4" />
   </div>
-  <div class="input-group radio clear-left">
+
+  <ul class="input-validation-errors">
+    <li>This is an error and it's bananas.</li>
+    <li>You are too old.</li>
+  </ul>
+
+  <div class="input-group radio error clear-left">
     <label for="radio1">I am a radio. Also, notice I clear myself with the clear class. My label is long and super cool.</label>
     <input type="radio" name="radios" id="radio1" />
   </div>
@@ -56,4 +68,8 @@
     <label for="radio2"> Half widths are probably good for when radio labels are long but not SO LONG that the label is too thin and spread out (like the guy above).</label>
     <input type="radio" name="radios" id="radio2" />
   </div>
+  <ul class="input-validation-errors">
+    <li>This is an error and it's bananas.</li>
+    <li>You are too old.</li>
+  </ul>
 </div>
