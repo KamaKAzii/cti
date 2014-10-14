@@ -1,13 +1,13 @@
 // _quick-quote-calculator.sass
 
-#quote-session-tokens
+#quote-session-tokens,
+.qqc-wrapper.panel
   margin-bottom: 0
 .qqc
   +standard-container
   +clearfix
-  width: 100%
-  max-width: 700px
-  margin: 0 auto $blh
+  +calculator-max-width
+  margin-bottom: $blh
   .input-group
     +clearfix
     float: none
@@ -66,7 +66,6 @@
   .input-validation-errors
     margin: 0 $gutter $blh
   @media all and (max-width: $mq-mobile-landscape)
-    max-width: 290px
     // Need to beat above selector for .ages
     .qqc-field,
     .qqc-field.ages

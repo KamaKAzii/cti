@@ -37,7 +37,7 @@
 
   </head>
 
-  <body id="home" class="">
+  <body id="" class="home">
 
     <div class="mobile-landscape-visibility-check"></div>
     <div class="tablet-visibility-check"></div>
@@ -60,10 +60,244 @@
       <div class="content">
         
 
+<div class="nav breadcrumb">
+  <nav>
+    <ol>
+      <a href="">
+        <li class="step1 complete">
+          <div>
+          </div>
+        </li>
+      </a>
+      <li class="step3 active">
+        <div>
+        </div>
+      </li>
+      <li class="step5">
+        <div>
+        </div>
+      </li>
+    </ol>
+  <span class="quote-reference">
+  </span>
+  </nav>
+</div>
 
-<div class="byline">
-  <h1>Simple, quick and secure.</h1>
-  <h2>Cheap travel insurnace <br /> covers your travel essentials.</h2>
+
+<h1><span>Tell us your</span> CSS Library</h1>
+
+<div class="modal-whitewash"></div>
+<div class="modal-content email-quote">
+  <h2>Email your quote</h2>
+  <button class="button-tertiary close" name="CloseEmailQuote"><span></span></button>
+
+  <p>Enter an email address and we'll send a link from which you can retrieve your quote at a later time.</p>
+  <div class="input-group full-width">
+    <input class="email-input" id="ActiveQuoteDto_EmailQuoteAddress" name="ActiveQuoteDto.EmailQuoteAddress" placeholder="Enter your email" type="text" value="">
+  </div>
+  <div class="actions">
+    <div class="input-group">
+      <button class="button-primary" data-analytics-id="email-quote" name="SubmitEmailQuote">
+        Send <span></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $modalComponents = $(".modal-content, .modal-whitewash").hide();
+
+  $("body").on("click", ".modal-content .close", function(e) {
+    $modalComponents.hide();
+    e.preventDefault();
+  });
+</script>
+
+<div class="control-panel--dev standard-container">
+  <h3>Dev Control Panel</h3>
+  <div class="input-group half-width">
+    <button class="button-primary toggle-validation">Toggle Validation State</button>
+  </div>
+  <div class="input-group half-width">
+    <button class="button-primary toggle-modal">Toggle Modal State</button>
+  </div>
+</div>
+
+<script>
+
+  $(function () {
+    var
+      toggleValidationState,
+      addValidationToInput,
+      createValidationUl,
+      toggleModalState;
+
+    $(".control-panel--dev .toggle-validation").on("click", function(e) {
+      toggleValidationState();
+      e.preventDefault();
+    });
+
+    $(".control-panel--dev .toggle-modal").on("click", function(e) {
+      toggleModalState();
+      e.preventDefault();
+    });
+
+    toggleValidationState = function() {
+      // QQC - Ages
+      var $qqcAgesInputGroup = $(".qqc-field.ages .input-group");
+      addValidationDirectlyToInput($qqcAgesInputGroup);
+
+      // QQC - Destinations
+      var $qqcWhereInputGroup = $(".qqc-field.where .input-group");
+      addValidationDirectlyToInput($qqcWhereInputGroup);
+    };
+
+    // Helper functions.
+    createValidationUl = function(items) {
+      var $validationUl = $("<ul>").addClass("input-validation-errors");
+      $.each(items, function(i, v) {
+        $validationUl.append($("<li>" + v + "</li>"));
+      });
+      return $validationUl;
+    };
+
+    addValidationDirectlyToInput = function($input) {
+      if ($input.hasClass("error")) {
+        $input.siblings(".input-validation-errors").remove();
+      } else {
+        var $validationUl = createValidationUl(
+        [
+          "This is an error.",
+          "Errors can be long and annoying like this too."
+        ]);
+        $input.after($validationUl);
+      }
+      $input.toggleClass("error");
+    };
+
+    toggleModalState = function() {
+      var $modalComponents = $(".modal-content, .modal-whitewash");
+      $modalComponents.toggle();
+    };
+  });
+
+</script>
+
+<div class="summary-aside-mobile-toggle">Tap to expand trip details</div>
+<div class="summary-aside">
+
+  <div class="trip-summary public">
+    <div class="trip-summary-content">
+
+      <input type="submit" class="edit link-like" data-analytics-id="open-edit-trip" name="EditTrip" value="Edit Trip">
+
+      <h4>Trip Summary</h4>
+      <dl class="destinations">
+        <dt>Travelling to</dt>
+        <dd>
+        Japan            </dd>
+      </dl>
+      <dl class="departure-date">
+        <dt>Departure Date</dt>
+        <dd>1 Oct 2014</dd>
+      </dl>
+      <dl class="return-date">
+        <dt>Return Date</dt>
+        <dd>7 Oct 2014</dd>
+      </dl>
+
+      <dl class="ages">
+        <dt>Ages:</dt>
+        <dd>
+        <span>23</span>
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+
+  <div class="quote-summary">
+    <div class="quote-summary-content">
+      <h4>Total</h4>
+      <dl class="total-price">
+        <dt>Total</dt>
+        <dd>$90.00</dd>
+      </dl>
+      <dl class="plan-name">
+        <dt>Plan</dt>
+        <dd> International Basic</dd>
+      </dl>
+      <dl class="base-policy">
+        <dt>Base Premium</dt>
+        <dd>$90.00</dd>
+      </dl>
+      <dl>
+        <dt>Options</dt>
+        <dd>$0.00</dd>
+      </dl>
+    </div>
+  </div>
+
+</div>
+
+<div class="standard-container">
+  <h3>Form Styles</h3>
+  <div class="input-group">
+    <label>Name</label>
+    <input type="text" placeholder="John Appleseed" />
+  </div>
+  <div class="input-group">
+    <label>What's your flava?</label>
+    <input type="text" placeholder="Vanilla Choc" />
+  </div>
+  <div class="input-group">
+    <label>Street Name</label>
+    <input type="text" placeholder="Awesome Street" />
+  </div>
+  <div class="input-group">
+    <label>Preferred Tea</label>
+    <input type="text" placeholder="Green" />
+  </div>
+  <div class="input-group">
+    <label>Headphone Choice</label>
+    <input type="text" placeholder="Stockholm blend" />
+  </div>
+  <div class="input-group">
+    <label>Adventure time?</label>
+    <input type="text" placeholder="Definitely" />
+  </div>
+  <div class="input-group half-width">
+    <label>I am half width</label>
+    <input type="text" placeholder="Yep I am" />
+  </div>
+  <div class="input-group half-width">
+    <label>I am half width</label>
+    <input type="text" placeholder="Yep I am" />
+  </div>
+  <div class="input-group checkbox">
+    <label for="checkbox2">I am a checkbox</label>
+    <input type="checkbox" id="checkbox2" />
+  </div>
+  <div class="input-group checkbox">
+    <label for="checkbox1">This is a sample chcekbox label which is long like a Terms and Conditions checkbox label. I agree to receive all policy documents electronically and have read, understood &amp; agree to the conditions in the Policy Wording.</label>
+    <input type="checkbox" id="checkbox1" />
+  </div>
+  <div class="input-group checkbox half-width">
+    <label for="checkbox3">This is a sample chcekbox which is half width and still has a pretty big label. See? It's pretty big isnt it...</label>
+    <input type="checkbox" id="checkbox3" />
+  </div>
+  <div class="input-group checkbox half-width">
+    <label for="checkbox4">This is a sample chcekbox which is half width and sits next to the other guy over yonder.</label>
+    <input type="checkbox" id="checkbox4" />
+  </div>
+  <div class="input-group radio clear-left">
+    <label for="radio1">I am a radio. Also, notice I clear myself with the clear class. My label is long and super cool.</label>
+    <input type="radio" name="radios" id="radio1" />
+  </div>
+  <div class="input-group radio half-width">
+    <label for="radio2"> Half widths are probably good for when radio labels are long but not SO LONG that the label is too thin and spread out (like the guy above).</label>
+    <input type="radio" name="radios" id="radio2" />
+  </div>
 </div>
 
 <form action="/Home/MultiTarget" id="qqc-form" method="post">      <div id="quote-session-tokens">
@@ -1004,6 +1238,288 @@
   </div>
 
 </form>
+
+<div class="trip-benefits">
+  <div class="benefits-header"><span class="expand-all o" data-analytics-id="expand-all-benefits">Expand All</span>
+
+    <ul class="plans">
+      <li class="plan">
+      <h4>Basic</h4>
+      <div class="price">$90.00<span>AUD</span></div>
+      <div class="buy-now">
+        <div class="input-group">
+          <div class="button-like buy-button-primary">
+            <a class="select" href="/Quote/SelectQuote?enc=kLg_wPS4F7AFuDMliLqLTZppVFyMfhC7QRT0AN3SJwkiK9Jn7lP1D7tbD_hKzRKQn0XXe-Og0DEFYgQSsGbbcQaCumN5Q_BO9YVo9BOqt-W6r1kyhSsFCdj2sq3aYKdwx-IeapHsCosHNfWCQJLxA2W7D2bRrVuj-muMiYTPyRbUiey-JMnEYqg06iNQvRRrFTQTFozc3-W1miZOEJmikA9KT-rb1wwSQL8O8JHcjNM%5E">Select </a>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      </li>
+    </ul>
+
+    <h3>
+      Policy benefits<br>
+      <a class="policy-wording" data-analytics-id="view-pds-top" href="/Document/OpenRegulatoryWording?RegulatoryWordingTypeId=1&amp;PlanId=22" target="_blank">(View policy wording)</a>
+      <span class="underwriter-logo"><img src=""></span>
+
+    </h3>
+
+  </div>
+  <div class="benefits-list" data-analytics-id="benefits-list">
+
+    <dl class="top-benefit">
+      <dt class="benefit-header">
+      <dl>
+        <dt class="title" data-analytics-id="benefit-title"><div class="expandable o">+</div><span>Cancellation Costs *</span></dt>
+        <dd class="values">
+        <ol>
+          <li class="value">$5,000</li>
+        </ol>
+        </dd>
+      </dl>
+      </dt>
+      <dd class="description" style="">
+      <span>Financial loss incurred due to unforeseen cancellation of prepaid travel and accommodation arrangements. Includes course fees, travel agency cancellation fees and loss of frequent flyer or equivalent points.</span>
+      </dd>
+    </dl>
+    <dl class="top-benefit">
+      <dt class="benefit-header">
+      <dl>
+        <dt class="title" data-analytics-id="benefit-title"><div class="expandable o">+</div><span>Medical Expenses Overseas *^</span></dt>
+        <dd class="values">
+        <ol>
+          <li class="value">Unlimited</li>
+        </ol>
+        </dd>
+      </dl>
+      </dt>
+      <dd class="description" style="">
+      <span>Emergency medical, hospital and road ambulance costs incurred overseas following a sudden illness or serious injury. Includes burial or cremation overseas or repatriation of mortal remains.</span>
+      <dl class="sub-benefit">
+        <dt class="benefit-header">
+        <dl>
+          <dt class="title"><span>Emergency Dental *^</span></dt>
+          <dd class="values">
+          <ol>
+            <li class="value">$1,000</li>
+          </ol>
+          </dd>
+        </dl>
+        </dt>
+        <dd class="description"><span>Emergency dental expenses required to relieve sudden and acute pain to healthy, natural teeth following an infection or broken tooth.</span></dd>
+      </dl>
+      </dd>
+    </dl>
+    <dl class="top-benefit">
+      <dt class="benefit-header">
+      <dl>
+        <dt class="title" data-analytics-id="benefit-title"><div class="expandable o">+</div><span>Additional Expenses / Medical Evacuation</span></dt>
+        <dd class="values">
+        <ol>
+          <li class="value">Unlimited</li>
+        </ol>
+        </dd>
+      </dl>
+      </dt>
+      <dd class="description" style="">
+      <span>Covers additional expense incurred for travel and accommodation if your trip is interrupted from a listed event which is outside you control. Includes return home following the sudden illness or serious injury of a close relative in Australia and, when agreed by us, medical evacuation home or to the nearest appropriate medical facility.</span>
+      </dd>
+    </dl>
+    <dl class="top-benefit">
+      <dt class="benefit-header">
+      <dl>
+        <dt class="title" data-analytics-id="benefit-title"><div class="expandable o">+</div><span>Luggage and Personal Effects *</span></dt>
+        <dd class="values">
+        <ol>
+          <li class="value">$5,000</li>
+        </ol>
+        </dd>
+      </dl>
+      </dt>
+      <dd class="description" style="">
+      <span>Cover for your Luggage and Personal Effects following theft, accidental loss or accidental damage. Includes expenses for emergency essentials if your luggage is delayed.</span>
+      </dd>
+    </dl>
+    <dl class="top-benefit">
+      <dt class="benefit-header">
+      <dl>
+        <dt class="title" data-analytics-id="benefit-title"><div class="expandable o">+</div><span>Travel Delay *</span></dt>
+        <dd class="values">
+        <ol>
+          <li class="value">$500</li>
+        </ol>
+        </dd>
+      </dl>
+      </dt>
+      <dd class="description" style="">
+      <span>Meal and accommodation expenses due to lengthy delay of your scheduled transport.</span>
+      </dd>
+    </dl>
+    <dl class="top-benefit">
+      <dt class="benefit-header">
+      <dl>
+        <dt class="title" data-analytics-id="benefit-title"><div class="expandable o">+</div><span>Personal Liability</span></dt>
+        <dd class="values">
+        <ol>
+          <li class="value">$1,000,000</li>
+        </ol>
+        </dd>
+      </dl>
+      </dt>
+      <dd class="description" style="">
+      <span>Cover for you being legally liable for causing bodily injury to others or causing damage to their property, including legal defence costs.</span>
+      </dd>
+    </dl>
+    <dl class="top-benefit">
+      <dt class="benefit-header">
+      <dl>
+        <dt class="title" data-analytics-id="benefit-title"><div class="expandable o">+</div><span>Rental Vehicle Insurance Excess Reimbursement</span></dt>
+        <dd class="values">
+        <ol>
+          <li class="value">$0</li>
+        </ol>
+        </dd>
+      </dl>
+      </dt>
+      <dd class="description" style="">
+      <span>Cover for the rental vehicle insurance excess you are required to pay following an accident, damage or theft of your rental vehicle.</span>
+      <dl class="sub-benefit">
+        <dt class="benefit-header">
+        <dl>
+          <dt class="title"><span>Rental Vehicle Return</span></dt>
+          <dd class="values">
+          <ol>
+            <li class="value">$0</li>
+          </ol>
+          </dd>
+        </dl>
+        </dt>
+        <dd class="description"><span>Costs to return a rental vehicle to the rental agency if you are medically unfit to do so.</span></dd>
+      </dl>
+      </dd>
+    </dl>
+  </div>
+
+  <div class="benefits-header after" data-analytics-id="quote-footer-summary">
+    <ul class="plans">
+      <li class="plan">
+      <h4>Basic</h4>
+      <div class="price">$90.00<span>AUD</span></div>
+      <div class="buy-now">
+        <div class="input-group">
+          <div class="button-like buy-button-primary">
+            <a class="select" href="/Quote/SelectQuote?enc=kLg_wPS4F7AFuDMliLqLTZppVFyMfhC7QRT0AN3SJwkiK9Jn7lP1D7tbD_hKzRKQn0XXe-Og0DEFYgQSsGbbcQaCumN5Q_BO9YVo9BOqt-W6r1kyhSsFCdj2sq3aYKdwx-IeapHsCosHNfWCQJLxA2W7D2bRrVuj-muMiYTPyRbUiey-JMnEYqg06iNQvRRrFTQTFozc3-W1miZOEJmikA9KT-rb1wwSQL8O8JHcjNM%5E">Select </a>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      </li>
+    </ul>
+    <div class="footnotes">
+      <p>* sublimits apply (refer to "Details of Your Cover")</p>
+      <p>^ Medical expenses incurred in Australia are not covered.</p>
+    </div>
+  </div>
+
+  <div class="benefits-footer">
+
+  </div>
+</div>
+
+<div class="display-container payment-details" id="payment-details">
+  <div class="display-container-content">
+    <img src="" class="thawte">
+
+    <div class="credit-card-editor-wrapper">
+
+      <h3 class="info">Secure Payment <span class="encryption">This is a 128-Bit SSL encrypted payment</span></h3>
+      <fieldset>
+        <div class="card-types">
+          <label>We Accept</label>
+          <span><img src="" alt="Visa"></span>
+          <span><img src="" alt="MasterCard"></span>
+          <span><img src="" alt="American Express"></span>
+        </div>
+
+        <div class="input-group cc-name">
+          <label for="PaymentDto_NameOnCreditCard">Name on card:</label>            <span class="help">The name on the front of your card</span>
+          <input class="name" id="PaymentDto_NameOnCreditCard" name="PaymentDto.NameOnCreditCard" tabindex="4" type="text" value="">            <input class="link-like set-name" type="submit" name="SetDefaultNameOnCard" tabindex="11" value="< Click to insert name of first traveller">
+        </div>
+        <div class="input-group cc-number">
+          <label for="PaymentDto_CreditCardNumber">Credit Card Number:</label>            <span class="help">The digits on the front of your credit card</span>
+          <input id="PaymentDto_CreditCardNumber" name="PaymentDto.CreditCardNumber" tabindex="5" type="text" value=""></div>
+
+        <div class="input-group cc-expiry">
+          <label for="PaymentDto_CreditCardExpiryDateMonthId">Expiration date:</label>            <span class="help">The date your credit card expires. Find this on the front of your credit card</span>
+          <select class="month" id="PaymentDto_CreditCardExpiryDateMonthId" name="PaymentDto.CreditCardExpiryDateMonthId" tabindex="6"><option selected="selected"></option>
+            <option value="1">01 - Jan</option>
+            <option value="2">02 - Feb</option>
+            <option value="3">03 - Mar</option>
+            <option value="4">04 - Apr</option>
+            <option value="5">05 - May</option>
+            <option value="6">06 - Jun</option>
+            <option value="7">07 - Jul</option>
+            <option value="8">08 - Aug</option>
+            <option value="9">09 - Sep</option>
+            <option value="10">10 - Oct</option>
+            <option value="11">11 - Nov</option>
+            <option value="12">12 - Dec</option>
+            </select>/<select class="year" id="PaymentDto_CreditCardExpiryDateYearId" name="PaymentDto.CreditCardExpiryDateYearId" tabindex="7"><option selected="selected"></option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+            <option value="2031">2031</option>
+            <option value="2032">2032</option>
+            <option value="2033">2033</option>
+            <option value="2034">2034</option>
+        </select></div>
+        <div class="input-group cc-verification">
+          <label for="PaymentDto_VerificationNumber">Security Code:</label>            <span class="alternative">(or CCV or CVC):</span>
+          <span class="help">Last 3 digits on the back of your Visa or Mastercard or 4 digits on the front of your AMEX card.</span>
+          <div class="hint">
+            <div class="other"></div>
+            <div class="amex"></div>
+            <input class="link-like" type="submit" name="ShowPaymentHint" value="enlarge">
+          </div>
+          <input id="PaymentDto_VerificationNumber" name="PaymentDto.VerificationNumber" tabindex="8" type="text" value=""></div>
+
+      </fieldset>    
+    </div>
+
+
+
+    <button class="buy-button-primary buy-now" tabindex="8" autocomplete="off" name="SubmitPayment">
+      Buy Now <span></span>
+    </button>
+  </div>
+</div>
+
+<div class="standard-container">
+  <h3>Button Styles</h3>
+  <div class="input-group">
+    <button class="button-primary">Button style</button>
+  </div>
+  <div class="input-group">
+    <button class="buy-button-primary">Button style</button>
+  </div>
+  <div class="input-group">
+    <button class="button-tertiary">Button style</button>
+  </div>
+</div>
 
 
       </div>

@@ -27,14 +27,14 @@ $(function() {
     $groupsLi.append($countriesUl);
   }
 
-  $('.int-domestic .hidden-country-ids').removeAttr('disabled');
-  $('.int-domestic #quote-destination select').attr('disabled', 'disabled');
+  $('.qqc .hidden-country-ids').removeAttr('disabled');
+  $('.qqc #quote-destination select').attr('disabled', 'disabled');
 
   // Setup item picker
   $(".qqc .where select").dropdownPicker(
-    $(".int-domestic #quote-destination input"),                           // $pickerAddButton
-    $(".int-domestic .hidden-country-ids"),                                // $hiddenSelectedItemsInput
-    $(".int-domestic #selected-destinations"),                             // $selectedItemsElement
+    $(".qqc #quote-destination input"),                           // $pickerAddButton
+    $(".qqc .hidden-country-ids"),                                // $hiddenSelectedItemsInput
+    $(".qqc #selected-destinations"),                             // $selectedItemsElement
     {
       instructions: $countryPickerUberMenu
     }
@@ -50,12 +50,12 @@ $(function() {
   });
 
   // Setup date pickers
-  var $departureDateDay = $(".int-domestic .departure-date select").eq(0);    // departureDateDay
-  var $departureDateMonth = $(".int-domestic .departure-date select").eq(1);  // departureDateMonth
-  var $departureDateYear = $(".int-domestic .departure-date select").eq(2);   // departureDateYear
-  var $returnDateDay = $(".int-domestic .return-date select").eq(0);          // returnDateDay
-  var $returnDateMonth = $(".int-domestic .return-date select").eq(1);        // returnDateMonth
-  var $returnDateYear = $(".int-domestic .return-date select").eq(2);         // returnDateYear
+  var $departureDateDay = $(".qqc .departure-date select").eq(0);    // departureDateDay
+  var $departureDateMonth = $(".qqc .departure-date select").eq(1);  // departureDateMonth
+  var $departureDateYear = $(".qqc .departure-date select").eq(2);   // departureDateYear
+  var $returnDateDay = $(".qqc .return-date select").eq(0);          // returnDateDay
+  var $returnDateMonth = $(".qqc .return-date select").eq(1);        // returnDateMonth
+  var $returnDateYear = $(".qqc .return-date select").eq(2);         // returnDateYear
 
   var maxTimeUntilPolicyStart = { years: 1 };
   var maxPolicyDurations = { 'IHI': { days: 365 }, 'Millstream': { days: 372 } };

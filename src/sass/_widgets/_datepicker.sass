@@ -6,9 +6,15 @@
   +clearfix
   background-color: $background-color-solid
   margin: 4px $gutter 0 0
+  table
+    margin-bottom: 0
+    td, th
+      padding-right: 0
   // TODO: Remove this from Common.
-  .datepicker-calendar:nth-last-child(1) 
-    display: inline
+  .datepicker-calendar
+    margin-bottom: 0
+    &:nth-last-child(1) 
+      display: inline
   .close, h3
     display: none
   .datepicker-show-next-month, .datepicker-show-past-month

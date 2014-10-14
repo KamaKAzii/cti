@@ -3181,7 +3181,7 @@ select {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
 }
@@ -3200,7 +3200,7 @@ select {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
   margin-left: -16px;
@@ -3404,7 +3404,7 @@ select {
     margin-top: 48px;
     z-index: 1001;
   }
-  /* line 90, ../sass/_base/_methods/_styles.sass */
+  /* line 107, ../sass/_base/_methods/_styles.sass */
   .header ul:after {
     content: "";
     position: absolute;
@@ -3463,11 +3463,11 @@ h1,
   text-transform: uppercase;
   text-align: center;
 }
-/* line 28, ../sass/_base/_elements.sass */
+/* line 33, ../sass/_base/_methods/_styles.sass */
 h1 span,
 .content > h2 span {
   color: white;
-  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.35);
 }
 
 /* line 4, ../sass/_base/_methods/_utilities.sass */
@@ -3476,35 +3476,35 @@ dl:after {
   display: table;
   clear: both;
 }
-/* line 34, ../sass/_base/_elements.sass */
+/* line 25, ../sass/_base/_elements.sass */
 dl dt {
   float: left;
   font-weight: bold;
 }
-/* line 37, ../sass/_base/_elements.sass */
+/* line 28, ../sass/_base/_elements.sass */
 dl dd {
   clear: left;
   float: left;
 }
 
-/* line 41, ../sass/_base/_elements.sass */
+/* line 32, ../sass/_base/_elements.sass */
 table {
   width: 100%;
   margin-bottom: 24px;
 }
-/* line 44, ../sass/_base/_elements.sass */
+/* line 35, ../sass/_base/_elements.sass */
 table tr {
   border-bottom: 1px solid #f6f6f6;
 }
-/* line 46, ../sass/_base/_elements.sass */
+/* line 37, ../sass/_base/_elements.sass */
 table th {
   font-weight: bold;
 }
-/* line 48, ../sass/_base/_elements.sass */
+/* line 39, ../sass/_base/_elements.sass */
 table th, table td {
   padding-right: 16px;
 }
-/* line 50, ../sass/_base/_elements.sass */
+/* line 41, ../sass/_base/_elements.sass */
 table th:last-child, table td:last-child {
   padding-right: 0;
 }
@@ -3729,8 +3729,16 @@ form:after {
 .input-group button, .input-group input {
   width: 100%;
 }
-
 /* line 19, ../sass/_base/_forms.sass */
+.input-group.clear-left {
+  clear: left;
+}
+/* line 21, ../sass/_base/_forms.sass */
+.input-group.clear-right {
+  clear: right;
+}
+
+/* line 24, ../sass/_base/_forms.sass */
 input[type='text'],
 input[type='password'],
 input[type='email'],
@@ -3742,7 +3750,7 @@ input[type='number'] {
   font-size: 14px;
   color: #303030;
 }
-/* line 29, ../sass/_base/_forms.sass */
+/* line 34, ../sass/_base/_forms.sass */
 input[type='text']:focus,
 input[type='password']:focus,
 input[type='email']:focus,
@@ -3750,22 +3758,22 @@ input[type='number']:focus {
   border-color: #179df2;
 }
 
-/* line 33, ../sass/_base/_forms.sass */
+/* line 38, ../sass/_base/_forms.sass */
 input.placeholder {
   color: #9daec0 !important;
 }
 
-/* line 35, ../sass/_base/_forms.sass */
+/* line 40, ../sass/_base/_forms.sass */
 ::-webkit-input-placeholder {
   color: #9daec0 !important;
 }
 
-/* line 37, ../sass/_base/_forms.sass */
+/* line 42, ../sass/_base/_forms.sass */
 ::-moz-placeholder {
   color: #9daec0 !important;
 }
 
-/* line 40, ../sass/_base/_forms.sass */
+/* line 45, ../sass/_base/_forms.sass */
 .input-validation-errors {
   position: relative;
   position: relative;
@@ -3782,7 +3790,7 @@ input.placeholder {
   left: 0;
   top: 0;
 }
-/* line 45, ../sass/_base/_forms.sass */
+/* line 50, ../sass/_base/_forms.sass */
 .input-validation-errors:after {
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
@@ -3791,10 +3799,60 @@ input.placeholder {
   padding: 0px 5px;
   border-radius: 10px;
 }
-/* line 52, ../sass/_base/_forms.sass */
+/* line 57, ../sass/_base/_forms.sass */
 .input-validation-errors li {
   list-style-type: none;
   margin-bottom: 12px;
+}
+
+/* line 62, ../sass/_base/_forms.sass */
+.input-group.checkbox,
+.input-group.radio {
+  position: relative;
+  min-height: initial;
+  min-height: auto;
+}
+/* line 67, ../sass/_base/_forms.sass */
+.input-group.checkbox label,
+.input-group.radio label {
+  -webkit-font-smoothing: antialiased;
+  float: left;
+  width: auto;
+  display: block;
+  padding-left: 40px;
+  padding-right: 16px;
+  margin-bottom: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+/* line 76, ../sass/_base/_forms.sass */
+.input-group.checkbox input[type="checkbox"],
+.input-group.checkbox input[type="radio"],
+.input-group.radio input[type="checkbox"],
+.input-group.radio input[type="radio"] {
+  position: absolute;
+  left: 0;
+  top: -3px;
+  width: auto;
+}
+/* line 82, ../sass/_base/_forms.sass */
+.input-group.checkbox.half-width, .payment-details .input-group.checkbox.cc-name, .payment-details .input-group.checkbox.cc-number, .payment-details .input-group.checkbox.cc-expiry,
+.input-group.radio.half-width,
+.payment-details .input-group.radio.cc-name,
+.payment-details .input-group.radio.cc-number,
+.payment-details .input-group.radio.cc-expiry {
+  width: 48%;
+  margin-right: 2%;
+}
+@media all and (max-width: 640px) {
+  /* line 82, ../sass/_base/_forms.sass */
+  .input-group.checkbox.half-width, .payment-details .input-group.checkbox.cc-name, .payment-details .input-group.checkbox.cc-number, .payment-details .input-group.checkbox.cc-expiry,
+  .input-group.radio.half-width,
+  .payment-details .input-group.radio.cc-name,
+  .payment-details .input-group.radio.cc-number,
+  .payment-details .input-group.radio.cc-expiry {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 /* line 3, ../sass/_base/_footer.sass */
@@ -3962,7 +4020,7 @@ input.placeholder {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
 }
@@ -3998,7 +4056,7 @@ input.placeholder {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
   color: white;
@@ -4056,7 +4114,7 @@ input.placeholder {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
   margin-top: -24px;
@@ -4323,7 +4381,7 @@ input.placeholder {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
 }
@@ -4471,7 +4529,7 @@ input.placeholder {
   text-align: center;
   width: 100%;
 }
-/* line 61, ../sass/_base/_methods/_styles.sass */
+/* line 78, ../sass/_base/_methods/_styles.sass */
 .quote-summary .total-price dd::first-letter {
   font-size: 12px;
   line-height: 12px;
@@ -4548,7 +4606,7 @@ input.placeholder {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
   border-top-left-radius: 0px;
@@ -4582,7 +4640,7 @@ input.placeholder {
   width: 100%;
   margin-bottom: 12px;
 }
-/* line 61, ../sass/_base/_methods/_styles.sass */
+/* line 78, ../sass/_base/_methods/_styles.sass */
 .benefits-header .price::first-letter {
   font-size: 12px;
   line-height: 12px;
@@ -4809,18 +4867,20 @@ input.placeholder {
   }
 }
 /* line 3, ../sass/_widgets/_quick-quote-calculator.sass */
-#quote-session-tokens {
+#quote-session-tokens,
+.qqc-wrapper.panel {
   margin-bottom: 0;
 }
 
-/* line 5, ../sass/_widgets/_quick-quote-calculator.sass */
+/* line 6, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc {
   background: white;
   background: rgba(255, 255, 255, 0.85);
   border-radius: 5px;
   width: 100%;
   max-width: 700px;
-  margin: 0 auto 24px;
+  margin: 0 auto;
+  margin-bottom: 24px;
 }
 /* line 4, ../sass/_base/_methods/_utilities.sass */
 .qqc:after {
@@ -4836,7 +4896,7 @@ input.placeholder {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
 }
@@ -4845,6 +4905,12 @@ input.placeholder {
   content: "";
   display: table;
   clear: both;
+}
+@media all and (max-width: 640px) {
+  /* line 6, ../sass/_widgets/_quick-quote-calculator.sass */
+  .qqc {
+    max-width: 290px;
+  }
 }
 /* line 11, ../sass/_widgets/_quick-quote-calculator.sass */
 .qqc .input-group {
@@ -4975,53 +5041,49 @@ input.placeholder {
   margin: 0 16px 24px;
 }
 @media all and (max-width: 640px) {
-  /* line 5, ../sass/_widgets/_quick-quote-calculator.sass */
-  .qqc {
-    max-width: 290px;
-  }
-  /* line 71, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 70, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field,
   .qqc .qqc-field.ages {
     width: 100%;
     margin-bottom: 0;
   }
-  /* line 75, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 74, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field h5,
   .qqc .qqc-field.ages h5 {
     min-height: initial;
     margin-bottom: 12px;
     border: none;
   }
-  /* line 79, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 78, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field h5:after,
   .qqc .qqc-field.ages h5:after {
     top: 10px;
   }
-  /* line 81, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 80, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field.when .departure-date,
   .qqc .qqc-field.ages.when .departure-date {
     margin-top: 0;
   }
-  /* line 83, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 82, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field.where h5,
   .qqc .qqc-field.ages.where h5 {
     border-top-right-radius: 5px;
   }
-  /* line 85, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 84, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field.ages input[type='text'] {
     width: 45%;
   }
-  /* line 87, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 86, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .qqc-field.ages input[type='text']:last-child {
     float: right;
     margin-right: 0;
   }
-  /* line 91, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 90, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .actions .input-group {
     float: none;
     width: auto;
   }
-  /* line 94, ../sass/_widgets/_quick-quote-calculator.sass */
+  /* line 93, ../sass/_widgets/_quick-quote-calculator.sass */
   .qqc .actions button {
     width: 100%;
   }
@@ -5053,7 +5115,7 @@ input.placeholder {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
 }
@@ -5232,11 +5294,11 @@ input.placeholder {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
 }
-/* line 90, ../sass/_base/_methods/_styles.sass */
+/* line 107, ../sass/_base/_methods/_styles.sass */
 .uber-menu:after {
   content: "";
   position: absolute;
@@ -5286,7 +5348,7 @@ input.placeholder {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
 }
@@ -5342,7 +5404,7 @@ input.placeholder {
 .uber-menu .group ul li:hover {
   cursor: pointer;
 }
-/* line 84, ../sass/_base/_methods/_styles.sass */
+/* line 101, ../sass/_base/_methods/_styles.sass */
 .uber-menu .group ul li:hover {
   background: #004594;
   color: white;
@@ -5393,11 +5455,11 @@ input.placeholder {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
 }
-/* line 90, ../sass/_base/_methods/_styles.sass */
+/* line 107, ../sass/_base/_methods/_styles.sass */
 .autocomplete:after {
   content: "";
   position: absolute;
@@ -5502,11 +5564,11 @@ input.placeholder {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
 }
-/* line 90, ../sass/_base/_methods/_styles.sass */
+/* line 107, ../sass/_base/_methods/_styles.sass */
 .datepicker:after {
   content: "";
   position: absolute;
@@ -5524,33 +5586,127 @@ input.placeholder {
   display: table;
   clear: both;
 }
-/* line 10, ../sass/_widgets/_datepicker.sass */
+/* line 9, ../sass/_widgets/_datepicker.sass */
+.datepicker table {
+  margin-bottom: 0;
+}
+/* line 11, ../sass/_widgets/_datepicker.sass */
+.datepicker table td, .datepicker table th {
+  padding-right: 0;
+}
+/* line 14, ../sass/_widgets/_datepicker.sass */
+.datepicker .datepicker-calendar {
+  margin-bottom: 0;
+}
+/* line 16, ../sass/_widgets/_datepicker.sass */
 .datepicker .datepicker-calendar:nth-last-child(1) {
   display: inline;
 }
-/* line 12, ../sass/_widgets/_datepicker.sass */
+/* line 18, ../sass/_widgets/_datepicker.sass */
 .datepicker .close, .datepicker h3 {
   display: none;
 }
-/* line 14, ../sass/_widgets/_datepicker.sass */
+/* line 20, ../sass/_widgets/_datepicker.sass */
 .datepicker .datepicker-show-next-month, .datepicker .datepicker-show-past-month {
   top: 12px;
 }
-/* line 16, ../sass/_widgets/_datepicker.sass */
+/* line 22, ../sass/_widgets/_datepicker.sass */
 .datepicker .datepicker-calendar td a {
   background: #cfe5ff;
   font-weight: 300;
 }
-/* line 19, ../sass/_widgets/_datepicker.sass */
+/* line 25, ../sass/_widgets/_datepicker.sass */
 .datepicker .datepicker-calendar td.selected a {
   background: #004594;
   color: white;
 }
-/* line 22, ../sass/_widgets/_datepicker.sass */
+/* line 28, ../sass/_widgets/_datepicker.sass */
 .datepicker .datepicker-calendar-title, .datepicker th {
   font-family: Nunito;
   font-weight: normal;
   text-transform: uppercase;
+}
+
+/* line 4, ../sass/_pages/_home.sass */
+body#home .content-wrapper {
+  background-size: cover;
+  background-position: center middle;
+}
+@media all and (max-width: 640px) {
+  /* line 4, ../sass/_pages/_home.sass */
+  body#home .content-wrapper {
+    background-image: url("/Content/styles/i/hero_background_1.jpg"), linear-gradient(#90bbed, #a3d8f6);
+  }
+}
+/* line 9, ../sass/_pages/_home.sass */
+body#home .byline {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+@media all and (max-width: 640px) {
+  /* line 9, ../sass/_pages/_home.sass */
+  body#home .byline {
+    max-width: 290px;
+  }
+}
+@media all and (max-width: 322px) {
+  /* line 9, ../sass/_pages/_home.sass */
+  body#home .byline {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+/* line 17, ../sass/_pages/_home.sass */
+body#home .byline h1 {
+  -webkit-font-smoothing: antialiased;
+  color: white;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.35);
+  text-align: left;
+  margin-bottom: 6px;
+}
+/* line 22, ../sass/_pages/_home.sass */
+body#home .byline h1:after {
+  content: "\5f";
+  font-family: IconWorks;
+  font-size: 30px;
+  margin-left: 16px;
+}
+/* line 27, ../sass/_pages/_home.sass */
+body#home .byline h2 {
+  text-transform: uppercase;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 300;
+}
+/* line 32, ../sass/_pages/_home.sass */
+body#home .qqc {
+  margin-bottom: 96px;
+}
+@media all and (max-width: 640px) {
+  /* line 35, ../sass/_pages/_home.sass */
+  body#home .byline {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  /* line 38, ../sass/_pages/_home.sass */
+  body#home .byline h1 {
+    display: block;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  /* line 42, ../sass/_pages/_home.sass */
+  body#home .byline h1:after {
+    font-size: 24px;
+    margin-left: 8px;
+  }
+  /* line 45, ../sass/_pages/_home.sass */
+  body#home .byline h2 {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }
 
 /* line 4, ../sass/_pages/_details.sass */
@@ -5569,7 +5725,7 @@ body#policy-details .input-container.adult-traveller fieldset > h3 {
   background: white;
   line-height: 32px;
   padding-left: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   text-transform: uppercase;
   margin-top: -24px;

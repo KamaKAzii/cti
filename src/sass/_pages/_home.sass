@@ -1,0 +1,47 @@
+// _home.sass
+
+body#home
+  .content-wrapper
+    background-size: cover
+    background-position: center middle
+    @media all and (max-width: $mq-mobile-landscape)
+      background-image: url('/Content/styles/i/hero_background_1.jpg'), linear-gradient($background-gradient-top, $background-gradient-bottom)
+  .byline
+    +calculator-max-width
+    margin-top: $blh
+    margin-bottom: $blh * 2
+    // A custom piece for when it gets uber thin.
+    @media all and (max-width: $calculator-max-width-mobile-landscape + ($gutter * 2))
+      margin-left: $gutter
+      margin-right: $gutter
+    h1
+      +font-smoothing
+      +main-header-inverted
+      text-align: left
+      margin-bottom: $blh / 4
+      &:after
+        content: "\5f"
+        font-family: $font-icon
+        font-size: $font-size-huge
+        margin-left: $gutter
+    h2
+      text-transform: uppercase
+      line-height: $font-size-large + 6px
+      font-size: $font-size-large
+      font-weight: 300
+  .qqc
+    margin-bottom: $blh * 4
+  @media all and (max-width: $mq-mobile-landscape)
+    .byline
+      margin-top: 0
+      margin-bottom: 0
+      h1
+        display: block
+        font-size: $font-size-xlarge
+        line-height: $font-size-xlarge + 4px
+        &:after
+          font-size: $font-size-xlarge
+          margin-left: $gutter / 2
+      h2
+        font-size: $font-size-small
+        line-height: $font-size-small + 4px

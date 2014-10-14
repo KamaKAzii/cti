@@ -13,6 +13,13 @@
   &:hover
     cursor: pointer
 
+=calculator-max-width
+  width: 100%
+  max-width: $calculator-max-width
+  margin: 0 auto
+  @media all and (max-width: $mq-mobile-landscape)
+    max-width: $calculator-max-width-mobile-landscape
+
 =input-container-h3-hax
   +content-header-title
   margin-top: -$blh

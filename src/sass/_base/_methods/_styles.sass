@@ -22,6 +22,23 @@
     left: 0
     top: 0
 
+=main-header
+  font-size: $font-size-page-header
+  line-height: $font-size-page-header + 4px
+  color: $theme-color
+  font-weight: 300
+  text-shadow: 0px -1px 0px rgba(255, 255, 255, 0.8)
+  text-transform: uppercase
+  text-align: center
+  span
+    color: $text-color-inverted
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.35)
+
+=main-header-inverted
+  color: $text-color-inverted
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.35)
+
+
 =standard-box-shadow
   box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.08)
     
@@ -69,7 +86,7 @@
   background: $background-color-solid
   line-height: $content-header-line-height 
   padding-left: $gutter
-  margin-bottom: $blh / 2
+  margin-bottom: $blh
   font-size: 14px
   text-transform: uppercase
 
