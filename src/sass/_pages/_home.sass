@@ -1,11 +1,10 @@
 // _home.sass
 
 body#home
-  .content-wrapper
+  // Make it span taller for the homepage.
+  .content-wrapper:after
+    height: 100%
     background-size: cover
-    background-position: center middle
-    @media all and (max-width: $mq-mobile-landscape)
-      background-image: url('/Content/styles/i/hero_background_1.jpg'), linear-gradient($background-gradient-top, $background-gradient-bottom)
   .byline
     +calculator-max-width
     margin-top: $blh
@@ -17,6 +16,9 @@ body#home
     h1
       +font-smoothing
       +main-header-inverted
+      text-transform: uppercase
+      // If the browser can go this thin, why not.
+      font-weight: 200
       text-align: left
       margin-bottom: $blh / 4
       &:after

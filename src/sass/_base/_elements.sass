@@ -11,6 +11,7 @@ body
 
 h1, h2, h3, h4, h5, h6
   font-family: $font-theme
+  text-transform: uppercase
 h1
   font-size: $font-size-xhuge
   line-height: $font-size-xhuge + 4px
@@ -44,14 +45,23 @@ dl
     clear: left
     float: left
 
+ul.list-icon
+  li
+    +icon-styles("\57")
+    padding-left: 25px
+  li:after
+    font-size: $font-size-normal
+    line-height: $font-size-normal + 4px
+
 table
+  +standard-container-without-header-styles
   width: 100%
   margin-bottom: $blh
   tr
     border-bottom: 1px solid $border-color-medium
+    &:last-child
+      border-bottom: none
   th
     font-weight: bold
   th, td
-    padding-right: $gutter
-    &:last-child
-      padding-right: 0
+    padding: $gutter / 2 $gutter

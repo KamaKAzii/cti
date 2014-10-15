@@ -1,0 +1,32 @@
+// _cms.sass
+
+.cms
+  .content > h1
+    text-align: left
+    font-size: $font-size-massive
+    line-height: $font-size-massive + 4px
+    span
+      display: block
+      font-size: $font-size-large
+      line-height: $font-size-large + 4px
+
+  // Overrides for the CMS header.
+  .content-wrapper:after
+    max-height: 430px
+    background-position: center center
+  .content > h1
+    margin-top: 30px
+    min-height: 255px
+  @media all and (max-width: $mq-mobile-landscape)
+    .content-wrapper:after
+      max-height: 340px
+      background-position: center center
+    .content > h1
+      display: block
+      margin-top: 0px
+      min-height: 210px
+      margin-left: $gutter
+      font-size: $font-size-xhuge
+      line-height: $font-size-xhuge + 4px
+      span
+        display: none
