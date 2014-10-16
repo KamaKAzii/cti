@@ -3,6 +3,11 @@
 form
   +clearfix
 
+legend
+  @extend h4
+  +bottom-border
+  width: 95%
+
 .input-group
   min-height: 64px
   margin-bottom: $blh
@@ -22,6 +27,13 @@ form
     clear: left
   &.clear-right
     clear: right
+
+// TODO: Remove this. It is a hack to remove the hack in standard-container component.
+.standard-container .input-group
+  padding-right: 0
+  @media all and (max-width: $mq-mobile-landscape)
+    padding-right: $gutter
+
 
 input[type='text'],
 input[type='password'],
@@ -65,7 +77,7 @@ input.placeholder
   input[type="radio"]
     position: absolute
     left: 0
-    top: -3px
+    top: -1px
     width: auto
   &.half-width
     width: 48%

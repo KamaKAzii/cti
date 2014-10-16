@@ -192,8 +192,67 @@
 
 </script>
 
+<div class="standard-container columns">
+  <h3>Columns</h3>
+
+  <style>
+    .columns .columns-1-1 > div,
+    .columns .columns-2-1 > div,
+    .columns .columns-1-2 > div,
+    .columns .columns-1-1-1 > div,
+    .columns .columns-1-1-1-1 > div {
+      background: #ccc;
+    }
+  </style>
+
+  <h4>Columns 1 1</h4>
+  <div class="columns-1-1">
+    <div class="first">
+      This is the left hand column.
+    </div>
+    <div class="last">
+      This is the right hand column.
+    </div>
+  </div>
+
+  <h4>Columns 2 1</h4>
+  <div class="columns-2-1">
+    <div class="first">
+      This is the left hand column.
+    </div>
+    <div class="last">
+      This is the right hand column.
+    </div>
+  </div>
+
+  <h4>Columns 1 1 1</h4>
+  <div class="columns-1-1-1">
+    <div class="first">
+      This is the left hand column.
+    </div>
+    <div class="middle">
+      This is the middle column.
+    </div>
+    <div class="last">
+      This is the right hand column.
+    </div>
+  </div>
+
+  <h4>Columns 1 1 1 1</h4>
+  <div class="columns-1-1-1-1">
+    <div class="first">First</div>
+    <div class="second">Second</div>
+    <div class="third">Third</div>
+    <div class="last">Last</div>
+  </div>
+
+</div>
+
 <div class="standard-container">
   <h3>Form Styles</h3>
+
+  <legend>Form Legend</legend>
+
   <div class="input-group">
     <label>Name</label>
     <input type="text" placeholder="John Appleseed" />
@@ -266,6 +325,21 @@
     <li>This is an error and it's bananas.</li>
     <li>You are too old.</li>
   </ul>
+</div>
+
+<div class="standard-container">
+  <h3>Components in columns</h3>
+  <div class="columns-1-2">
+    <div class="first">
+      <h4>This is a H4 as a heading. YOLO!</h4>
+      <p>This piece of content is sitting in a .columns-1-2 structure. Isn't it pretty? You can do things like this too if you just follow the structure!</p>
+    </div>
+    <div class="last">
+      <div class="pull-quote">
+        This is an important piece of information. You probably want to pay attention to what it says. It is super important. It looks like a pullquote or something.
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="standard-container">

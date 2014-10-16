@@ -48,12 +48,18 @@
   @media all and (max-width: $mq-mobile-landscape)
     margin: 0
 
+=pull-quote
+  border-left: 2px solid $border-color-dark
+  padding-left: $gutter * 2
+  font-size: $font-size-huge
+  line-height: $font-size-huge + 8px
+
 // For extending and direct use.
 .standard-container
   // TODO: Use content containers within markup and get rid of weirdness.
   +standard-container
   padding-left: $gutter
-  > p, > dl, > ul, > h1, > h2, > h3, > h4, > h5, > .table-wrapper
+  > p, > dl, > ul, > h1, > h2, > h3, > h4, > h5, > div, > legend
     box-sizing: border-box
     padding-right: $gutter
   @media all and (max-width: $mq-mobile-landscape)
@@ -65,3 +71,6 @@
   > h4:first-child
     +content-header-title
     margin-left: -$gutter
+
+.pull-quote
+  +pull-quote
